@@ -1,0 +1,126 @@
+{
+  "checkedAt": "2026-11-18T13:49:59.339Z",
+  "references": [
+    {
+      "id": "mktauto",
+      "observedHead": "f2c410109472fd19df6043d8f04801be37ad13a4",
+      "observedBranch": "master",
+      "headUnchanged": true,
+      "gitStatusUnchanged": true,
+      "filesChecked": 12,
+      "changedFiles": [],
+      "observedHashes": [],
+      "result": "UNCHANGED"
+    },
+    {
+      "id": "nexolira",
+      "observedHead": "c1712b0cbdd6b56067a63b92507f387df83b7bd6",
+      "observedBranch": "main",
+      "headUnchanged": true,
+      "gitStatusUnchanged": true,
+      "filesChecked": 4,
+      "changedFiles": [],
+      "observedHashes": [],
+      "result": "UNCHANGED"
+    },
+    {
+      "id": "plat008",
+      "observedHead": "e413e11c71899c2694d4fd675d43e3a80253bd38",
+      "observedBranch": "codex/plat-008-application-shell",
+      "headUnchanged": false,
+      "gitStatusUnchanged": false,
+      "filesChecked": 31,
+      "changedFiles": [
+        "docs/tasks/PLAT-008.md",
+        "frontend/package.json",
+        "frontend/src/app/session.tsx",
+        "frontend/src/components/application-entry-link.tsx",
+        "frontend/src/components/history.tsx",
+        "frontend/src/components/ui.tsx",
+        "frontend/src/features/acl.tsx",
+        "frontend/src/features/overview.tsx",
+        "frontend/src/features/quotas.tsx",
+        "frontend/src/services/api.ts",
+        "frontend/src/shell/shell.tsx",
+        "frontend/src/styles/app.css",
+        "frontend/test/components.test.tsx",
+        "frontend/test/e2e/portal.spec.ts",
+        "frontend/test/security.test.ts"
+      ],
+      "observedHashes": [
+        {
+          "path": "docs/tasks/PLAT-008.md",
+          "sha256": "14601f27afaac7debd6599a470faf2825d436430d6d3a7c575c609e8ae4b0ef0"
+        },
+        {
+          "path": "frontend/package.json",
+          "sha256": "e9dc16765ea1c63bc23760dc80ebffcaa818393dca7457c74754a6203f782ef0"
+        },
+        {
+          "path": "frontend/src/app/session.tsx",
+          "sha256": "e23b1ab7a12c9ff49d3f8b3d26f7e8863da1a90e02ac892fbaacbce73e639a66"
+        },
+        {
+          "path": "frontend/src/components/application-entry-link.tsx",
+          "sha256": "2befb0eaf85cb42c30708e2b5631c45842de7c9946570cd812812ed139967e7b"
+        },
+        {
+          "path": "frontend/src/components/history.tsx",
+          "sha256": "374af5435329b99b8a1e2f7a28863eb11c5cdf135c6ed039316cee5be081dc71"
+        },
+        {
+          "path": "frontend/src/components/ui.tsx",
+          "sha256": "126401e203640b5d0efe441d86a5c48e96a3b5da02f83d9d724888d3340094a2"
+        },
+        {
+          "path": "frontend/src/features/acl.tsx",
+          "sha256": "8087224d1483c085de6e2935c84a0d36241801728fc96a1846d9084cc6af012f"
+        },
+        {
+          "path": "frontend/src/features/overview.tsx",
+          "sha256": "6ed76e1a44f9a6307c7f71be8e69f33cc879ca7ccc95ad3e8e1f2e01fd593bc2"
+        },
+        {
+          "path": "frontend/src/features/quotas.tsx",
+          "sha256": "178962054f6acdc116fe221feb487ff820020712af5a0b6e79f4d604f431089c"
+        },
+        {
+          "path": "frontend/src/services/api.ts",
+          "sha256": "5b8a2a6c21f52512ad7dbc4832394915b40e68408b60f2292279f86af4eec749"
+        },
+        {
+          "path": "frontend/src/shell/shell.tsx",
+          "sha256": "d8a6ab87b2be135079f21d1b3460e4b4be71523f38b51f9ac418dfed169b8c90"
+        },
+        {
+          "path": "frontend/src/styles/app.css",
+          "sha256": "bed7e920f4ee37d952d78e5a91ec8f0adb358d71d10a053968c43364f92f9402"
+        },
+        {
+          "path": "frontend/test/components.test.tsx",
+          "sha256": "f27d8e66036c027e6e142c16024f5a5d20c5bceb85cbb386584711144c583ea8"
+        },
+        {
+          "path": "frontend/test/e2e/portal.spec.ts",
+          "sha256": "6b1078e437059c17c1252783778ef22ffb1b2b59967875677bc80641988397cf"
+        },
+        {
+          "path": "frontend/test/security.test.ts",
+          "sha256": "87caa47985eae20fbe80f092b49f1a696746c8ec01326770599f0d6b1034bf14"
+        }
+      ],
+      "result": "SOURCE_CHANGED_SINCE_SNAPSHOT"
+    },
+    {
+      "id": "market-direction",
+      "observedHead": "fabf665dd65056581c12dc3cde69832d1a4b8466",
+      "observedBranch": "codex/nj-core-client-connection-002",
+      "headUnchanged": true,
+      "gitStatusUnchanged": true,
+      "filesChecked": 17,
+      "changedFiles": [],
+      "observedHashes": [],
+      "result": "UNCHANGED"
+    }
+  ]
+}

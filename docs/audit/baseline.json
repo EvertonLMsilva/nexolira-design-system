@@ -1,0 +1,301 @@
+{
+  "recordedAt": "2026-11-18T13:34:13.459Z",
+  "references": [
+    {
+      "id": "mktauto",
+      "path": "C:/01-projetos/00-MKTauto/01-MKTauto-front",
+      "head": "f2c410109472fd19df6043d8f04801be37ad13a4",
+      "branch": "master",
+      "remote": "git@github.com:EvertonLMsilva/04-MKTauto-frontend.git",
+      "status": "",
+      "hashes": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "5a1c53bca1727151553736d2982bc896155c1e04497bce067a393de172ac620b"
+        },
+        {
+          "path": "package.json",
+          "sha256": "d14b5a0f72644bc74a725da40d99d14a19bef2050fa995d35e6096e8001e516c"
+        },
+        {
+          "path": "src/styles/global.css",
+          "sha256": "214a754c456986eac510bff3c8f74f33b291c5286acd574b3135ca45730b35f0"
+        },
+        {
+          "path": "src/styles/layout.css",
+          "sha256": "2654ac8f1631fb7c45d0dd3941eb8afbb5084e36f943e73786a9127600ca035a"
+        },
+        {
+          "path": "src/styles/tokens.css",
+          "sha256": "1ff3c858621697e779aeaa73d184db923a3c003199eba25465dce6c6722a76a1"
+        },
+        {
+          "path": "src/components/ui/Icon.tsx",
+          "sha256": "7433edbdee1a7fcaaf2505fcf51eb8f52b813bd80ebf0c86a91f6f80ec431054"
+        },
+        {
+          "path": "src/components/ui/NeonBadge.tsx",
+          "sha256": "4ffacdb9d9e60da9fe31d43b4de43e05552f4296217fb43c289dc766f0c0a10c"
+        },
+        {
+          "path": "src/components/ui/NeonButton.tsx",
+          "sha256": "ec3e6115c4673bdc27820a20c9a6a4e5fb7ec2e65527a28828d5fa9a019cd941"
+        },
+        {
+          "path": "src/components/ui/NeonControls.test.tsx",
+          "sha256": "53d64f156793526ee419bda91ec7fa18e61368c64727861b164d23973114e871"
+        },
+        {
+          "path": "src/components/ui/NeonPanel.test.tsx",
+          "sha256": "1a577ff088f6514bca7d2d653051f6cb935444e39e5988756b66f8e01c3844d8"
+        },
+        {
+          "path": "src/components/ui/NeonPanel.tsx",
+          "sha256": "7a52d9a5f33dc07796de403d3c040b54c1573149b6015a01170449dee7f3316c"
+        },
+        {
+          "path": "src/components/ui/StatusMessage.tsx",
+          "sha256": "0248eb0e3df89d482bef680f704c567ab9322053f03fafe7c5d08ef9405b6962"
+        }
+      ]
+    },
+    {
+      "id": "nexolira",
+      "path": "C:/01-projetos/02-nexolira-orchestrator",
+      "head": "c1712b0cbdd6b56067a63b92507f387df83b7bd6",
+      "branch": "main",
+      "remote": "https://github.com/EvertonLMsilva/nexolira-orchestrator.git",
+      "status": "",
+      "hashes": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "15d135d4dbdc8c64c222e411a8846e8dcb6d031ddb9bc07cff6ab6967b7a10fc"
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "sha256": "fc552775f6e762e1e3bc1539521a73c5ba70f6da330d7d4b80d6f465dfe399c9"
+        },
+        {
+          "path": "docs/DECISIONS.md",
+          "sha256": "8c4888733f62f9201a61c1014786716f72e533805059bcc5b6b181e2f894ca08"
+        },
+        {
+          "path": "docs/TOPIC_ROADMAP.md",
+          "sha256": "ae3bc9d8edd707272697dce14411dcbed972065ed5102f626eb345aa8a6f32e9"
+        }
+      ]
+    },
+    {
+      "id": "plat008",
+      "path": "C:/01-projetos/02-nexolira-plat-008",
+      "head": "c1712b0cbdd6b56067a63b92507f387df83b7bd6",
+      "branch": "codex/plat-008-application-shell",
+      "remote": "https://github.com/EvertonLMsilva/nexolira-orchestrator.git",
+      "status": " M README.md\n M docs/ARCHITECTURE.md\n M docs/DECISIONS.md\n M docs/TOPIC_ROADMAP.md\n M docs/history/ROADMAP_HISTORY.md\n?? docs/tasks/PLAT-008.md\n?? frontend/.dockerignore\n?? frontend/.env.example\n?? frontend/.gitignore\n?? frontend/Dockerfile\n?? frontend/compose.yml\n?? frontend/docs/APPLICATION_ENTRY.md\n?? frontend/docs/LOCAL_FRONTEND.md\n?? frontend/docs/evidence/acl.png\n?? frontend/docs/evidence/auditoria.png\n?? frontend/docs/evidence/catalogo.png\n?? frontend/docs/evidence/dashboard.png\n?? frontend/docs/evidence/login.png\n?? frontend/docs/evidence/mobile-dashboard.png\n?? frontend/docs/evidence/quotas.png\n?? frontend/index.html\n?? frontend/package-lock.json\n?? frontend/package.json\n?? frontend/playwright.config.ts\n?? frontend/public/nexolira.svg\n?? frontend/scripts/docker-smoke.mjs\n?? frontend/scripts/run-e2e.mjs\n?? frontend/scripts/serve.mjs\n?? frontend/scripts/test-environment.mjs\n?? frontend/src/app/app.tsx\n?? frontend/src/app/session.tsx\n?? frontend/src/app/tenant.tsx\n?? frontend/src/components/application-entry-link.tsx\n?? frontend/src/components/domain-selectors.tsx\n?? frontend/src/components/history.tsx\n?? frontend/src/components/ui.tsx\n?? frontend/src/contracts/application-entry.ts\n?? frontend/src/contracts/core.ts\n?? frontend/src/contracts/forms.ts\n?? frontend/src/features/acl.tsx\n?? frontend/src/features/catalog.tsx\n?? frontend/src/features/commercial.tsx\n?? frontend/src/features/identity.tsx\n?? frontend/src/features/login.tsx\n?? frontend/src/features/overview.tsx\n?? frontend/src/features/quotas.tsx\n?? frontend/src/hooks/use-resource.ts\n?? frontend/src/main.tsx\n?? frontend/src/services/api.ts\n?? frontend/src/shell/shell.tsx\n?? frontend/src/styles/app.css\n?? frontend/test/components.test.tsx\n?? frontend/test/e2e/portal.spec.ts\n?? frontend/test/proxy.test.ts\n?? frontend/test/scope.test.ts\n?? frontend/test/security.test.ts\n?? frontend/test/setup.ts\n?? frontend/tsconfig.json\n?? frontend/vite.config.ts",
+      "hashes": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "23bc6c3e7482e49d9cc33da478d95f1509c3459fbfa4e840ffb8b81c580249c8"
+        },
+        {
+          "path": "docs/tasks/PLAT-008.md",
+          "sha256": "f15572862b4b83b81ee9a84b71ba5caa1019258c7429f999a3a14b2aafebd99f"
+        },
+        {
+          "path": "frontend/package.json",
+          "sha256": "f7b3ad0e1edf620cb04fbba7aae453d3ccac506fb447232c9d7a94ae93f310e3"
+        },
+        {
+          "path": "frontend/src/app/app.tsx",
+          "sha256": "df39635184e3ea46a96e269b59ff87344d0bbf726737ec3e1ed474d5af82e613"
+        },
+        {
+          "path": "frontend/src/app/session.tsx",
+          "sha256": "095e27ce6a1c8946e7afe5e8c5525a6165c8433847de33065e0973cb10d8ddfc"
+        },
+        {
+          "path": "frontend/src/app/tenant.tsx",
+          "sha256": "68900daeecde7ca2e5091eb908c17ae4cac942cfd040947a75fc804c153f2d47"
+        },
+        {
+          "path": "frontend/src/components/application-entry-link.tsx",
+          "sha256": "332ca8a66e5479adaa46e8f99b4b139bda8650afabf1f4f73f7b94f7a1cdf79e"
+        },
+        {
+          "path": "frontend/src/components/domain-selectors.tsx",
+          "sha256": "44bcd3f192306275ca6ffb3e2204a39f1ac7a10199cbaefd9eba17d5f7700da4"
+        },
+        {
+          "path": "frontend/src/components/history.tsx",
+          "sha256": "4cc3910749a7cda930aef8d75bec840084521dc6df6559337571d991d301836f"
+        },
+        {
+          "path": "frontend/src/components/ui.tsx",
+          "sha256": "9ef8aff933f89c82653e09e13fa8e2ec43802b29d5fd36109eaac580de93a176"
+        },
+        {
+          "path": "frontend/src/contracts/application-entry.ts",
+          "sha256": "12363c9402d08a3ed3e0984683e20e540bd3891a6026b827135bb2d4269a5f4d"
+        },
+        {
+          "path": "frontend/src/contracts/core.ts",
+          "sha256": "25d0d73edded11b7216dd96581af8e06476375bae2306fd3b38c9ff2326a6552"
+        },
+        {
+          "path": "frontend/src/contracts/forms.ts",
+          "sha256": "3a1fbf70c94a18342df4e498de7eab0708d60d130b2a04d53e25d5ad2fdc43f0"
+        },
+        {
+          "path": "frontend/src/features/acl.tsx",
+          "sha256": "ec5193170bb54e90a433645e190e190a6397d4c1f87ca9d79754d36bf9ae2215"
+        },
+        {
+          "path": "frontend/src/features/catalog.tsx",
+          "sha256": "982a02e4fc208e64f91ccbcbb57b8ad41e161d80ab0cf45b68e1851b7930662a"
+        },
+        {
+          "path": "frontend/src/features/commercial.tsx",
+          "sha256": "00910f04126bb716153ad76629e151e80d136cdb55840dbb891c17adbd7b3665"
+        },
+        {
+          "path": "frontend/src/features/identity.tsx",
+          "sha256": "599efaf4e9c8cc572fca87bd16a7af23a00f5724b300e947dc363921d4d5a611"
+        },
+        {
+          "path": "frontend/src/features/login.tsx",
+          "sha256": "a2791edcd0ef0fcb8056451ce7efcc93e59e34fd80f90d2b35b4291442ba4282"
+        },
+        {
+          "path": "frontend/src/features/overview.tsx",
+          "sha256": "e471bc23a4196148ddece4b35036f599faae21f6e245f291cdce1de766c8a428"
+        },
+        {
+          "path": "frontend/src/features/quotas.tsx",
+          "sha256": "668615b4febf8440c8f5ae56eea351237f574c58f4cabe05b1c42898d527608c"
+        },
+        {
+          "path": "frontend/src/hooks/use-resource.ts",
+          "sha256": "1b060c017b86e8c0aaac541ca866a3390dceba4a125c6158261d63caaf416dd9"
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "sha256": "a30e286dc2c7e88472e6fb1f06ae9ed26e7ff0f1a0ded4a85e1b81577365194e"
+        },
+        {
+          "path": "frontend/src/services/api.ts",
+          "sha256": "2186ffcbe558a15d577917db945b5b6f8a6cdca9d0328e41accd9bff48acaae4"
+        },
+        {
+          "path": "frontend/src/shell/shell.tsx",
+          "sha256": "094b9eeb8a30a10f9e418650a47e8bc6719c8136d22ba008b1a391fe698daa8c"
+        },
+        {
+          "path": "frontend/src/styles/app.css",
+          "sha256": "5e8dbed246217a80c7f9a4179e6803de0b543fd8027886ba6a429fff6d04a10b"
+        },
+        {
+          "path": "frontend/test/components.test.tsx",
+          "sha256": "4451c2b2f8744ba506d7a3900afab9ea00728a0373ec0a7f687117f4047e293e"
+        },
+        {
+          "path": "frontend/test/e2e/portal.spec.ts",
+          "sha256": "43451a553be0c64f6c067642252a708dc16ff71b16a4d2fe817611bef6030da5"
+        },
+        {
+          "path": "frontend/test/proxy.test.ts",
+          "sha256": "f2df51f17fafdd399334e7d23749e0601bcb8d10fd9c511981bf6c0962114400"
+        },
+        {
+          "path": "frontend/test/scope.test.ts",
+          "sha256": "36580c04324a7803ec97a39828916b3052ffc2d862ebb10da4a67c04ea2126d4"
+        },
+        {
+          "path": "frontend/test/security.test.ts",
+          "sha256": "8583fbb1debea18c7565ac9c92f2232db2be469c8cb545a1eb4334b6472b036c"
+        },
+        {
+          "path": "frontend/test/setup.ts",
+          "sha256": "1c1f608698cea6a2bdf222d68ef48fb2a8f6bb99297afe3ed87151cb67739a99"
+        }
+      ]
+    },
+    {
+      "id": "market-direction",
+      "path": "C:/01-projetos/01-sistem-analitics-financial-market",
+      "head": "fabf665dd65056581c12dc3cde69832d1a4b8466",
+      "branch": "codex/nj-core-client-connection-002",
+      "remote": "git@github.com:EvertonLMsilva/Orchestrating_orders_via_AI.git",
+      "status": "A  Docs/NJ_CORE_CLIENT_CONNECTION_002.md\n M README.md\n M src/MarketContext/Go/client/agent-config.example.json\n M src/MarketContext/Go/data/MES.json\n M src/MarketContext/Go/data/MNQ.json\n M src/MarketContext/Go/data/economic-events.json\n M src/MarketContext/Go/data/news.json\n M src/MarketContext/Go/run-client-wsl.sh\n M src/MarketContext/Go/run-server-wsl.sh\n M src/NinjaTrader/Shared/HistoricalAnalysis/HistoricalAdditionalCandidateFamilies.cs\nM  src/NinjaTrader/Shared/MarketContext/MarketContextClient.cs\n M src/NinjaTrader/Shared/TechnicalIndicators/PlaybackBestHoursSignal.cs\n M src/NinjaTrader/Shared/TechnicalIndicators/PositionSizeCalculator.cs\n M src/NinjaTrader/Strategies/Sim101TradePlanStrategy.cs\nA  tests/TechnicalIndicators.Tests/MarketContextClientConnectionTests.cs\nMM tests/TechnicalIndicators.Tests/Program.cs\nM  tests/TechnicalIndicators.Tests/TechnicalIndicators.Tests.csproj\n?? src/MarketContext/Go/client/market-direction-agent.cer\n?? src/NinjaTrader/Shared/TechnicalIndicators/BrazilEntryWindow.cs",
+      "hashes": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "f87d86e21dc0541c6a5d34f3a01814517c33e53515de6094ae059f819dad7571"
+        },
+        {
+          "path": "Docs/FRONTEND_STYLE_GUIDE.md",
+          "sha256": "de48deee25e29d902ecaf8a726beb299609f3eb964afea239a4f5263becb505e"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/package.json",
+          "sha256": "2308e3e4ff28cee25a68dbb57e6faf6c7a49e24b794e112baf7156859e1e98bc"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/components/AppShell.jsx",
+          "sha256": "76e1711432939aa15eed6276d6749e97f201265bfb009e4a94a85edae8d97d39"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/components/Button.jsx",
+          "sha256": "89190c1af4e7eba1e5e0fc970b7b1d57bdcab3e4aca2c82aec76dfacabd62ab4"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/components/Card.jsx",
+          "sha256": "1632d8d383aaf1d488e600fb6ea4557744d4d85f7f89cd0dff69e80a2813e4d5"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/components/components.test.jsx",
+          "sha256": "f243205b4d04f2c332d09e5ce1c81eac441e27bb726bfa4e691f5af642a12531"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/components/DataTable.jsx",
+          "sha256": "c010f5b473caf29cee158edc62369bed1d4f515d5c580b51d2770608c0921fb9"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/components/Feedback.jsx",
+          "sha256": "0b9b4f5ea05631cf472965843b16916c60074b1ed6d87c0eba593af1dd9e9f8f"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/components/Field.jsx",
+          "sha256": "67ef5e4b5e2cd07b3f2cf4ab0ed78ea7d822235a84d7aedc4955612ee3cb5c4e"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/components/index.js",
+          "sha256": "c01952cbf1ba9665000652d96e588b9ab0ad8c65e226b0bbdf687a8477f7e940"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/components/PageHeader.jsx",
+          "sha256": "f3a2d026f053e72e0553aa4fd2c9dba14eb6332e5c5b37a7ff131091154c0c08"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/components/StatusBadge.jsx",
+          "sha256": "f43d6a80f2523b215443399fab7634913fa55c61e65a226f4604974ab182efd4"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/components/TelemetryFilters.jsx",
+          "sha256": "9b1b6ca429bd12f31c7a5440f0338bec743c0cbd6f5fa2883aaa4d9c4cfd75a0"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/styles/components.css",
+          "sha256": "ff09bb3025f4f0cd0ff0f6fdadc495ea9e857bedee63d0307be2dbd29db2c373"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/styles/global.css",
+          "sha256": "faae6943c87397875e15260ee80770c7a9fbceeb95e8894cbebf337c821e047d"
+        },
+        {
+          "path": "src/MarketContext/Go/internal/httpapi/frontend/src/styles/tokens.css",
+          "sha256": "2c8ffc000873d34e77f201a6445dca4b90e0e12bc9ce2f72c97ed3205b867355"
+        }
+      ]
+    }
+  ]
+}
