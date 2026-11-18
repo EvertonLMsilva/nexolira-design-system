@@ -15,3 +15,7 @@ evoluiu durante a auditoria; comparação registrada, sem escrita nos produtos.
 Remoto criado como privado; main estabelecida no commit inicial vazio
 916484fce74e5b60e0265eb13b0fdd6ba9ad0925. Fundação permanece na branch
 codex/nx-ds-001-foundation, com fechamento Git em andamento.
+
+2026-11-18 — [PR #1](https://github.com/EvertonLMsilva/nexolira-design-system/pull/1) aberto para main, no repositório
+privado. Técnico DONE, oito subtópicos; revisão/merge exclusivamente pelo usuário.
+Nenhuma implementação do NX-DS-002, publicação ou adoção foi iniciada.

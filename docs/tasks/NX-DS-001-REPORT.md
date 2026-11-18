@@ -1,27 +1,27 @@
 # NX-DS-001 — relatório final local
 
-Registro de 2026-11-18. Fundação técnica concluída; fechamento Git privado autorizado.
+Registro de 2026-11-18. Fundação técnica concluída e PR privado aberto para revisão.
 
 ```text
 PROJECT: NEXOLIRA-DESIGN-SYSTEM
 FRONT: DESIGN_SYSTEM
 PARENT_TOPIC: NX-DS-001
-PARENT_STATUS: IN_PROGRESS — fechamento Git autorizado
-TASK_STATUS: DONE — fundação técnica local
+PARENT_STATUS: PR_OPEN — técnico DONE; revisão e merge pelo usuário
+TASK_STATUS: DONE — fundação técnica e entrega Git
 
 REPOSITORY: EvertonLMsilva/nexolira-design-system — PRIVATE, criado e verificado
 LOCAL_PATH: C:\01-projetos\03-nexolira-design-system
 WORKTREE: diretório principal independente; nenhuma worktree adicional criada
 BRANCH: codex/nx-ds-001-foundation
 BASE_HEAD: 916484fce74e5b60e0265eb13b0fdd6ba9ad0925 — main, commit inicial vazio
-FINAL_HEAD: PENDING_FOUNDATION_COMMIT
-GIT_STATUS: entrega em preparação na branch do tópico; remoto origin configurado
+FINAL_HEAD: headRefOid do PR #1; SHA final exato verificado e registrado na descrição do PR
+GIT_STATUS: CLEAN e sincronizado com origin/codex/nx-ds-001-foundation no fechamento
 
 SUBTOPICS_TOTAL: 8
 SUBTOPICS_DONE: 8 no escopo técnico local
 SUBTOPICS_PARTIAL: 0
 SUBTOPICS_PENDING: 0
-SUBTOPICS_REMAINING: 0 técnicos; PR em preparação
+SUBTOPICS_REMAINING: 0; revisão e merge pertencem ao usuário
 
 MKTAUTO_AUDIT_STATUS: DONE — código/dependências/testes presentes inspecionados
 NEXOLIRA_AUDIT_STATUS: DONE — main e worktree PLAT-008; evolução de fonte registrada
@@ -57,13 +57,13 @@ DOC_VALIDATION: PASS — estrutura, links locais, JSON, matriz, aliases, projeç
 TESTS: validador local executado; suites dos consumidores não executadas
 BUILD: NOT_RUN / NOT_APPLICABLE_FOUNDATION; nenhum pack ou instalação executado
 
-PR: NOT_CREATED
-PR_STATUS: IN_PROGRESS_PRIVATE_REMOTE
+PR: https://github.com/EvertonLMsilva/nexolira-design-system/pull/1
+PR_STATUS: OPEN — não draft; base main; autoMergeRequest=null
 MERGE_STATUS: NOT_EXECUTED — USER_ONLY_MERGE
 
-BLOCKERS: NONE — autorização privada recebida e acesso confirmado pela ferramenta GitHub local
+BLOCKERS: NONE
 RISKS: proveniência/licença de código e ícones de referência UNVERIFIED; fonte PLAT-008 evoluiu; contratos draft e UI ainda não validados em consumo
-NEXT_ACTION: concluir um único PR NX-DS-001; revisão e merge exclusivamente pelo usuário
+NEXT_ACTION: usuário revisar PR #1 e decidir merge; iniciar NX-DS-002 somente em task própria
 ```
 
 ## Evidências
@@ -74,7 +74,7 @@ NEXT_ACTION: concluir um único PR NX-DS-001; revisão e merge exclusivamente pe
 - [Validação reproduzível](../audit/validation.json), [pares de contraste](../audit/contrast.json) e [método](../audit/CONTRAST.md).
 - [Style Guide](../STYLE_GUIDE.md), [tokens](../architecture/TOKEN_CONTRACT.md), [temas](../architecture/THEMES.md), [catálogo](../architecture/COMPONENT_CATALOG.md).
 
-Comandos executados no repositório novo, com Node v24.22.1:
+Comandos de validação executados no repositório novo, com Node v24.22.1:
 
 ```text
 node scripts/validate-foundation.mjs --write-css --check-references --record
@@ -159,3 +159,18 @@ O usuário autorizou criação PRIVADA e um único PR, sem merge, em 2026-11-18.
 Privacidade e base main confirmadas no GitHub. O conector ainda retorna 404
 para o novo repositório; o acesso foi comprovado pela ferramenta local já
 autenticada. Nenhuma mudança de visibilidade pública foi realizada.
+
+## Fechamento Git verificado
+
+[PR #1 — NX-DS-001 — Fundação do Nexolira Design System](https://github.com/EvertonLMsilva/nexolira-design-system/pull/1)
+aberto de codex/nx-ds-001-foundation para main, em repositório privado, sem draft
+e sem merge automático. A descrição do PR registra os SHAs exatos de base/head,
+sem autoembutir neste relatório o SHA do commit que o contém.
+
+Commit principal da fundação: 84f9224f8c111d4422e71f5bf7dba4406a975a88.
+O commit posterior apenas consolida o estado final da entrega e suas evidências.
+
+Comandos de fechamento executados: criação privada via gh repo create;
+commit inicial vazio em main; commit da fundação, push da base e da branch;
+gh pr create com body-file; git diff --cached --check; gh pr view,
+gh repo view e comparação dos HEADs local/remoto. Nenhum merge executado.

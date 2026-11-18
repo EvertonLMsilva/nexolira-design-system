@@ -12,7 +12,7 @@
 | DS-008 | Não extrair módulos de domínio | ui.tsx PLAT-008 importa ApiError/useResource; Status mapeia decisões de negócio. |
 | DS-009 | Sem cópia de fonte nesta etapa | Nenhuma licença de redistribuição localizada nas raízes auditadas; reuso de código permanece condicionado. |
 | DS-010 | React 19 como primeiro alvo proposto | Manifests locais observados usam React 19; peers exatos exigem testes no NX-DS-002. |
-| DS-011 | Um tópico, uma branch, um PR sem merge | Usuário autorizou remoto privado em 2026-11-18; repositório privado criado e base main estabelecida; fechamento via GitHub local autenticado. |
+| DS-011 | Um tópico, uma branch, um PR sem merge | Usuário autorizou remoto privado em 2026-11-18; repositório privado criado e base main estabelecida; PR #1 aberto via GitHub local autenticado, sem merge automático. |
 | DS-012 | SemVer e atualização voluntária | Mudanças visuais afetam consumidores; registrar compatibilidade e migração. |
 
 Estas decisões aprovam a direção desta fundação local; não autorizam publicação,

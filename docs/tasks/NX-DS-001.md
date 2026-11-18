@@ -6,9 +6,9 @@ PRIORITY: P0
 EXECUTION_MODE: AUDIT_AND_FOUNDATION
 MERGE_POLICY: USER_ONLY_MERGE
 PR_POLICY: ONE_PARENT_ONE_PR
-PARENT_STATUS: IN_PROGRESS — fechamento Git autorizado
+PARENT_STATUS: PR_OPEN — técnico DONE; revisão e merge pelo usuário
 TECHNICAL_STATUS: DONE
-GIT_INTEGRATION: IN_PROGRESS_PRIVATE_REMOTE
+GIT_INTEGRATION: PR_OPEN
 OPERATIONAL_STATUS: NOT_APPLICABLE_FOUNDATION
 
 ## Objetivo e escopo autorizado
@@ -88,7 +88,7 @@ Em 2026-11-18, o usuário respondeu “Autorizar repositório privado”, autori
 a criação de EvertonLMsilva/nexolira-design-system e um único PR, sem merge.
 Repositório criado e privacidade verificada pela ferramenta autenticada GitHub.
 Base main: 916484fce74e5b60e0265eb13b0fdd6ba9ad0925, commit inicial vazio
-intencional; toda a entrega NX-DS-001 será revisável no diff do tópico.
+intencional; toda a entrega NX-DS-001 é revisável no diff do tópico.
 A branch codex/nx-ds-001-foundation parte dessa base, sem reescrita de histórico.
 O conector GitHub retornou 404 mesmo após a criação verificada; o fechamento
 usa a ferramenta local do GitHub já autenticada, com acesso confirmado.
@@ -97,3 +97,10 @@ A comparação de referência registrou evolução do PLAT-008 para o commit
 e413e11c71899c2694d4fd675d43e3a80253bd38; os demais três locais monitorados
 permaneceram com HEAD/status e hashes auditados inalterados. Esta execução não
 escreveu em consumidores. Não há build, pacote, publicação, adoção ou merge.
+
+## Pull Request
+
+[PR #1 — NX-DS-001 — Fundação do Nexolira Design System](https://github.com/EvertonLMsilva/nexolira-design-system/pull/1)
+aberto para main, sem draft, no repositório privado. Merge automático
+desativado; nenhum merge executado. A entrega técnica e Git está concluída,
+aguardando revisão do usuário. NX-DS-002 continua fora desta execução.
