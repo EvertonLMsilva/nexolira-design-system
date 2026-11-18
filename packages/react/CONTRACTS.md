@@ -1,4 +1,20 @@
-# Contratos React — proposta de fundação
+# Contratos React — API local0.1.0
+
+NX-DS-002 implementa Button, Card/Panel (mesma função), Badge, StatusMessage,
+Input e FormField. API normativa nas declarações emitidas e exports de index.ts.
+Peers comprovados por consumidores tarball: React/DOM19.2.8 e19.3.1, sempre
+no mesmo par. CSS explícito com declarations de import de efeito; ESM ES2022.
+
+FormField usa renderControl, sem clone de filhos. Button loading preserva
+rótulo e aplica disabled nativo/aria-busy; o controle sai da ordem de Tab.
+Card aceita heading/headingLevel; sem heading (inclusive false) usa div,
+com heading usa section rotulada por useId. Ações ficam em controles próprios.
+Nenhum anúncio automático em Badge; StatusMessage announcement=off por default.
+
+As seções abaixo conservam os princípios e propostas da fundação; componentes
+fora da fatia implementada continuam propostas, sem contrato público compilado.
+
+## Princípios da fundação
 
 Alvo inicial proposto: React 19; manifests auditados usam 19.3.1 (MKTauto e Portal
 local) e 19.2.8 (Market Direction). São versões OBSERVADAS nos arquivos locais,

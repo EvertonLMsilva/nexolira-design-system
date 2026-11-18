@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Consumidor descartável Nexolira</title>
+<style>
+#fixtures { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr)); gap: 1rem; }
+.demo { display: grid; gap: 1rem; padding: 1rem; min-width: 0; }
+.demo-buttons { display: flex; flex-wrap: wrap; gap: .75rem; }
+</style></head>
+<body><header><p id="outside">Texto externo sem tema</p><label for="outside-input">Campo externo</label><input id="outside-input" /><button id="before-library">Antes da biblioteca</button></header>
+<main id="fixtures">
+<section class="nx-scope" data-nx-theme="nexolira" data-nx-mode="dark" id="dark-host"><div id="dark-root"></div><div class="nx-scope" data-nx-theme="nexolira" data-nx-mode="light" id="nested-host"><div id="nested-root"></div></div></section>
+<section class="nx-scope" data-nx-theme="nexolira" data-nx-mode="light" id="light-host"><div id="light-root"></div></section>
+</main><script type="module" src="/src.tsx"></script></body></html>

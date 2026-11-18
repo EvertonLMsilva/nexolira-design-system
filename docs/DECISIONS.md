@@ -12,8 +12,22 @@
 | DS-008 | Não extrair módulos de domínio | ui.tsx PLAT-008 importa ApiError/useResource; Status mapeia decisões de negócio. |
 | DS-009 | Sem cópia de fonte nesta etapa | Nenhuma licença de redistribuição localizada nas raízes auditadas; reuso de código permanece condicionado. |
 | DS-010 | React 19 como primeiro alvo proposto | Manifests locais observados usam React 19; peers exatos exigem testes no NX-DS-002. |
-| DS-011 | Um tópico, uma branch, um PR sem merge | Usuário autorizou remoto privado em 2026-11-18; repositório privado criado e base main estabelecida; PR #1 aberto via GitHub local autenticado, sem merge automático. |
+| DS-011 | Um tópico, uma branch, um PR sem merge | Usuário autorizou remoto privado em 2026-11-18; repositório privado criado e base main estabelecida; PR #1 posteriormente confirmado MERGED pelo usuário; NX-DS-002 mantém PR próprio, sem merge automático. |
 | DS-012 | SemVer e atualização voluntária | Mudanças visuais afetam consumidores; registrar compatibilidade e migração. |
 
 Estas decisões aprovam a direção desta fundação local; não autorizam publicação,
 alterações nos produtos ou aceite operacional de bibliotecas futuras.
+
+## NX-DS-002 — biblioteca local 0.1
+
+| ID | Decisão | Consequência |
+|---|---|---|
+| DS-013 | ESM ES2022 + types/CSS explícitos | esbuild mínimo e TypeScript; sem CJS ou imports CSS ocultos |
+| DS-014 | Peers exatos React/DOM 19.2.8 ou 19.3.1 | Compatibilidade limitada ao par comprovado; nenhum React18 presumido |
+| DS-015 | Card e Panel são a mesma implementação | Composição sem API duplicada |
+| DS-016 | CSS subpaths com declaração types própria | TypeScript 6 aceita imports sem wildcard genérico no consumidor |
+| DS-017 | Tarballs privados e consumidor temporário externo | Distribuição local sem registry; nenhum frontend real modificado |
+| DS-018 | Código novo e UNLICENSED | Nenhuma extração de fonte dos produtos ou licença aberta presumida |
+
+O PR #1 foi confirmado MERGED no commit 42d631659268c8241a7eb0f06c74066e27dd6a8f.
+Esta task não altera os registros históricos do NX-DS-001.

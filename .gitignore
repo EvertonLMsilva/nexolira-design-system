@@ -7,3 +7,7 @@ coverage/
 !.env.example
 *.log
 .DS_Store
+.types/
+.artifacts/
+test-results/
+playwright-report/

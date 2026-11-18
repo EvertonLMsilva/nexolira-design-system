@@ -1,0 +1,92 @@
+import { createRef } from 'react'
+import { render, screen } from '@testing-library/react'
+import { userEvent } from '@testing-library/user-event'
+import { expect, it, vi } from 'vitest'
+import { Button, Card, Panel, Badge, StatusMessage, Input, FormField } from '../packages/react/src/index.js'
+
+it('Button preserves native props/ref, keyboard activation and safe form default', async () => {
+  const click = vi.fn(), submit = vi.fn(e => e.preventDefault()), ref = createRef<HTMLButtonElement>()
+  render(<form onSubmit={submit}><Button ref={ref} onClick={click} className="extra">Salvar</Button></form>)
+  const button = screen.getByRole('button', { name: 'Salvar' })
+  expect(ref.current).toBe(button)
+  expect(button).toHaveAttribute('type', 'button')
+  expect(button).toHaveClass('nx-button', 'extra')
+  await userEvent.tab()
+  await userEvent.keyboard('{Enter} ')
+  expect(click).toHaveBeenCalledTimes(2)
+  expect(submit).not.toHaveBeenCalled()
+})
+it.each([{ disabled: true }, { loading: true }])('blocks unavailable Button actions %j', async props => {
+  const action = vi.fn()
+  render(<Button {...props} onClick={action}>Enviar</Button>)
+  const button = screen.getByRole('button', { name: 'Enviar' })
+  expect(button).toBeDisabled()
+  await userEvent.click(button)
+  await userEvent.tab()
+  expect(button).not.toHaveFocus()
+  expect(action).not.toHaveBeenCalled()
+  if ('loading' in props) expect(button).toHaveAttribute('aria-busy', 'true')
+})
+it.each(['primary', 'secondary', 'ghost'] as const)('supports %s and native submit override', variant => {
+  render(<Button variant={variant} size="lg" type="submit">Confirmar</Button>)
+  expect(screen.getByRole('button')).toHaveClass('nx-button--' + variant, 'nx-button--lg')
+  expect(screen.getByRole('button')).toHaveAttribute('type', 'submit')
+})
+it('Card and Panel share implementation and preserve named regions and action semantics', async () => {
+  expect(Panel).toBe(Card)
+  const action = vi.fn()
+  render(<Panel heading="Resumo" headingLevel={3} description="Dados locais" action={<Button onClick={action}>Atualizar</Button>}>Conteúdo</Panel>)
+  expect(screen.getByRole('region', { name: 'Resumo' })).toHaveTextContent('Conteúdo')
+  expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent('Resumo')
+  await userEvent.tab()
+  await userEvent.keyboard('{Enter}')
+  expect(action).toHaveBeenCalledTimes(1)
+})
+it('unnamed Card is an ordinary grouping div', () => {
+  const { container } = render(<Card>Conteúdo</Card>)
+  expect(container.firstElementChild?.tagName).toBe('DIV')
+  expect(screen.queryByRole('region')).not.toBeInTheDocument()
+})
+it.each(['neutral', 'info', 'success', 'warning', 'error'] as const)('Badge %s never announces business state automatically', tone => {
+  render(<Badge tone={tone}>Aguardando confirmação</Badge>)
+  expect(screen.getByText('Aguardando confirmação')).toHaveClass('nx-tone--' + tone)
+  expect(screen.queryByRole('status')).not.toBeInTheDocument()
+  expect(screen.queryByRole('alert')).not.toBeInTheDocument()
+})
+it('StatusMessage announces only when explicitly configured', () => {
+  const { rerender } = render(<StatusMessage tone="error">Falha local</StatusMessage>)
+  expect(screen.queryByRole('alert')).not.toBeInTheDocument()
+  rerender(<StatusMessage announcement="polite" busy>Carregando</StatusMessage>)
+  expect(screen.getByRole('status')).toHaveAttribute('aria-busy', 'true')
+  rerender(<StatusMessage tone="error" announcement="assertive">Falha local</StatusMessage>)
+  expect(screen.getByRole('alert')).toHaveAttribute('aria-live', 'assertive')
+})
+it('FormField associates hint/error/required and forwards Input events/ref/native attributes', async () => {
+  const ref = createRef<HTMLInputElement>(), changed = vi.fn()
+  render(<FormField id="email" label="E-mail" hint="Use seu contato" error="Informe um e-mail válido" required renderControl={props => <Input {...props} ref={ref} type="email" autoComplete="email" onChange={changed} defaultValue="teste" />} />)
+  const input = screen.getByRole('textbox', { name: 'E-mail' })
+  expect(input).toBe(ref.current)
+  expect(input).toBeRequired()
+  expect(input).toHaveAttribute('aria-invalid', 'true')
+  expect(input).toHaveAccessibleDescription('Use seu contato Informe um e-mail válido')
+  await userEvent.tab()
+  expect(input).toHaveFocus()
+  await userEvent.type(input, '@local.test')
+  expect(changed).toHaveBeenCalled()
+  expect(input).toHaveValue('teste@local.test')
+})
+it('supports controlled values, unique IDs, disabled controls and error removal', () => {
+  const { rerender } = render(<><FormField label="Um" renderControl={p => <Input {...p} value="a" readOnly />} /><FormField label="Dois" error="Falhou" renderControl={p => <Input {...p} disabled />} /></>)
+  expect(screen.getByLabelText('Um').id).not.toBe(screen.getByLabelText('Dois').id)
+  expect(screen.getByLabelText('Dois')).toBeDisabled()
+  rerender(<FormField label="Um" renderControl={p => <Input {...p} value="b" readOnly />} />)
+  expect(screen.getByLabelText('Um')).toHaveValue('b')
+  expect(screen.getByLabelText('Um')).not.toHaveAttribute('aria-invalid')
+  expect(screen.getByLabelText('Um')).not.toHaveAttribute('aria-describedby')
+})
+
+it('conditional false headings preserve ordinary Card grouping', () => {
+  const { container } = render(<Card heading={false}>Conteúdo condicional</Card>)
+  expect(container.firstElementChild?.tagName).toBe('DIV')
+  expect(screen.queryByRole('heading')).not.toBeInTheDocument()
+})

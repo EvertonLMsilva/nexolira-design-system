@@ -1,6 +1,7 @@
-# Arquitetura da fundação
+# Arquitetura do Design System
 
-Status: contrato local NX-DS-001, sem biblioteca compilada/distribuída.
+Estado atual NX-DS-002: pacotes privados locais 0.1.0; contrato público e
+verificações em [task NX-DS-002](tasks/NX-DS-002.md). Sem adoção em produto.
 
 ```text
 tokens (dados neutros -> CSS nx)
@@ -19,19 +20,22 @@ globais, regras de autorização ou import de código de consumidores.
 
 ## Pacotes
 
-- tokens: primitivos, semânticos e aliases de componente; referência validável.
-- ui: primitivas React acessíveis, estilos prefixados e testes próprios futuros.
+- tokens: modelo neutro, compilador/validador, valores resolvidos e CSS determinístico.
+- ui: Button, Card/Panel, Badge, StatusMessage, Input/FormField, tipos e CSS.
 - docs: demonstração/documentação local futura; nunca shell agregador de produtos.
 
 npm workspaces resolve organização local simples ([documentação npm](https://docs.npmjs.com/cli/v11/using-npm/workspaces/)).
-Nenhum orquestrador extra é necessário para três workspaces sem build nesta fase.
-A validação atual usa somente Node; não há lockfile porque não houve resolução
-ou instalação de dependências. O NX-DS-002 adicionará lockfile ao instalar tooling.
+Build local com esbuild e declarações via TypeScript, lockfile próprio e versões
+exatas; Vitest/Testing Library e consumidor Chromium headless. Nenhum Nx/Turbo.
+O smoke instala tarballs fora dos workspaces em dois pares React/DOM exatos,
+sem symlinks. Bundles externalizam React e seus subpaths; peers não são copiados.
+Manifests privados permitem npm pack local e bloqueiam publicação acidental.
 
 ## CSS e integração
 
 Somente variáveis --nx-* e classes nx-*. Sem reset global, @import remoto ou
-injeção automática de estilos. Entrada CSS explícita no futuro. Classes
+injeção automática de estilos. Entradas CSS explícitas com declarations para
+imports de efeito no TypeScript. Classes
 associadas ao componente; propriedades herdáveis apenas dentro do host opt-in.
 Não usar !important para disputar estilos com consumidores.
 
@@ -59,4 +63,4 @@ MFE neste projeto. Sem Module Federation, SSO ou shell compartilhado nesta etapa
 
 [Tokens](architecture/TOKEN_CONTRACT.md), [React](../packages/react/CONTRACTS.md),
 [distribuição](architecture/DISTRIBUTION.md) e [decisões](DECISIONS.md) detalham
-contratos e gates. Nenhum consumidor depende desta fundação.
+contratos e gates. Nenhum consumidor real foi alterado ou adotou a biblioteca nesta task.
