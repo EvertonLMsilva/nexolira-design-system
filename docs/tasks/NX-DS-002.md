@@ -17,7 +17,8 @@ PR #1 confirmado MERGED, mergeCommit no mesmo SHA, mergedAt 2026-11-18T14:21:31Z
 Diretório C:/01-projetos/03-nexolira-design-system inicialmente limpo em
 codex/nx-ds-001-foundation/e811db9394d4d52954edd0921553fd90125a3d4f.
 Branch atual codex/nx-ds-002-library-mvp criada de origin/main; sem worktree extra.
-Remoto origin git@github.com:EvertonLMsilva/nexolira-design-system.git, privado.
+Remoto origin git@github.com:EvertonLMsilva/nexolira-design-system.git.
+Visibilidade atual PUBLIC confirmada no fechamento; esta execução não a alterou.
 Prompt autoriza implementação, instalação de ferramentas necessárias, testes,
 pack, consumidor descartável e um PR; nenhum merge ou publicação em registry.
 
@@ -149,7 +150,7 @@ PARENT_TOPIC: NX-DS-002
 TASK_STATUS: DONE — biblioteca local validada
 PARENT_STATUS: PR_OPEN — técnico DONE; revisão e merge pelo usuário
 
-REPOSITORY: EvertonLMsilva/nexolira-design-system — PRIVATE
+REPOSITORY: EvertonLMsilva/nexolira-design-system — PUBLIC confirmado no fechamento
 WORKTREE: C:\01-projetos\03-nexolira-design-system; diretório principal próprio
 BRANCH: codex/nx-ds-002-library-mvp
 BASE_HEAD: 42d631659268c8241a7eb0f06c74066e27dd6a8f
@@ -213,7 +214,8 @@ descrição do PR para não autoembutir o SHA do commit neste próprio relatóri
 Diff revisado: somente biblioteca, tooling, testes e documentação autorizados;
 nenhum artefato gerado, credencial ou dado runtime incluído no Git.
 AGENTS, Style Guide e documentos/evidências NX-DS-001 permaneceram inalterados.
-Repositório privado; nenhuma publicação em registry ou adoção de consumidor real.
+Visibilidade GitHub PUBLIC observada; pacotes permanecem private=true.
+Nenhuma publicação em registry ou adoção de consumidor real.
 
 ## Inventário de arquivos da entrega
 
@@ -262,3 +264,11 @@ packages/tokens/README.md
 packages/tokens/package.json
 scripts/validate-foundation.mjs
 ```
+
+## Visibilidade do repositório
+
+GitHub REST e gh repo view confirmaram PUBLIC no fechamento de 2026-11-18.
+A criação privada foi registrada no NX-DS-001; não se presume quem ou quando
+alterou essa configuração. Nenhum comando desta execução modificou visibilidade.
+O campo private=true dos manifests continua bloqueando publicação dos pacotes
+e não define a visibilidade do repositório GitHub.
