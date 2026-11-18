@@ -4,8 +4,8 @@ PROJECT: NEXOLIRA-DESIGN-SYSTEM
 FRONT: DS
 PARENT_TOPIC: NX-DS-002
 PRIORITY: P0
-TASK_STATUS: DONE — técnico local
-PARENT_STATUS: IN_PROGRESS
+TASK_STATUS: DONE — biblioteca local validada
+PARENT_STATUS: PR_OPEN — técnico DONE; revisão e merge pelo usuário
 OPERATIONAL_STATUS: LOCAL_CONSUMER_VALIDATED; adoção real não executada
 MERGE_POLICY: USER_ONLY_MERGE
 
@@ -138,7 +138,7 @@ As execuções finais acima passaram; nenhuma falha foi ocultada.
 - [x] Consumidores fora dos workspaces: instalação/TS/render/CSS/build.
 - [x] Ausência de React duplicado e dependências de aplicativos.
 - [x] Documentação atualizada e nenhum consumidor real modificado.
-- [x] Revisão do diff e evidências; abertura de um único PR em andamento.
+- [x] Revisão do diff e evidências; um único PR aberto para revisão.
 
 ## Relatório obrigatório
 
@@ -146,21 +146,21 @@ As execuções finais acima passaram; nenhuma falha foi ocultada.
 PROJECT: NEXOLIRA-DESIGN-SYSTEM
 FRONT: DS
 PARENT_TOPIC: NX-DS-002
-TASK_STATUS: DONE — técnico
-PARENT_STATUS: IN_PROGRESS — fechamento por PR
+TASK_STATUS: DONE — biblioteca local validada
+PARENT_STATUS: PR_OPEN — técnico DONE; revisão e merge pelo usuário
 
 REPOSITORY: EvertonLMsilva/nexolira-design-system — PRIVATE
 WORKTREE: C:\01-projetos\03-nexolira-design-system; diretório principal próprio
 BRANCH: codex/nx-ds-002-library-mvp
 BASE_HEAD: 42d631659268c8241a7eb0f06c74066e27dd6a8f
-FINAL_HEAD: SHA verificado será registrado na descrição do PR e resposta final
-GIT_STATUS: validação concluída; commit/push/PR em preparação
+FINAL_HEAD: headRefOid do PR #2; SHA final exato verificado na descrição do PR
+GIT_STATUS: CLEAN e sincronizado com origin/codex/nx-ds-002-library-mvp no fechamento
 
 SUBTOPICS_TOTAL: 8
-SUBTOPICS_DONE: 8 técnicos
+SUBTOPICS_DONE: 8
 SUBTOPICS_PARTIAL: 0
 SUBTOPICS_PENDING: 0
-SUBTOPICS_REMAINING: 0 técnicos; integração Git em fechamento
+SUBTOPICS_REMAINING: 0; revisão e merge pertencem ao usuário
 
 TOKENS_STATUS: PASS — compilação, resolução, ciclos, colisões e aliases
 THEMES_STATUS: PASS — Nexolira dark/light/aninhado e roots independentes
@@ -178,13 +178,26 @@ TYPECHECK: PASS — fontes e ambos os consumidores
 LINT: PASS — deny-warnings
 TESTS: PASS — Vitest + Chromium em React/DOM19.2.8 e19.3.1
 
-PR: PENDING_CREATION
+PR: https://github.com/EvertonLMsilva/nexolira-design-system/pull/2
 MERGE_STATUS: NOT_EXECUTED — USER_ONLY_MERGE
 BLOCKERS: NONE
 LIMITATIONS: ESM/React19 exatos; sem React18/CJS/SSR/portais ou componentes complexos; não publicado nem adotado
-NEXT_ACTION: concluir único PR; usuário revisa e decide merge; adoção pela Frente Frontend em task própria
+NEXT_ACTION: usuário revisar PR #2 e decidir merge; adoção Frontend em task/PR próprios
 ```
 
 Contrato de consumo: EvertonLMsilva/nexolira-frontend,
 C:/01-projetos/04-nexolira-frontend. Usar ambos os tarballs e imports CSS
 do README, respeitando o par React/DOM testado. Esse projeto não foi alterado.
+
+## Fechamento Git
+
+[PR #2 — NX-DS-002 — Biblioteca Funcional de Tokens e Componentes React](https://github.com/EvertonLMsilva/nexolira-design-system/pull/2)
+aberto para main, sem draft e com autoMergeRequest=null. Nenhum merge foi
+executado. Commit principal de implementação ff13deab716a70013939884063317daa547d9c9c;
+commit documental posterior consolida estes registros. SHA final publicado na
+descrição do PR para não autoembutir o SHA do commit neste próprio relatório.
+
+Diff revisado: somente biblioteca, tooling, testes e documentação autorizados;
+nenhum artefato gerado, credencial ou dado runtime incluído no Git.
+AGENTS, Style Guide e documentos/evidências NX-DS-001 permaneceram inalterados.
+Repositório privado; nenhuma publicação em registry ou adoção de consumidor real.

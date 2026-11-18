@@ -26,3 +26,7 @@ compartilhados. Suíte21 PASS e dois consumidores tarball React/DOM19.2.8/19.3.1
 aprovados, com Chromium/axe/isolamento e build reprodutível. Nenhum produto real
 alterado, pacote publicado ou merge executado nesta task. Evidências em
 [task NX-DS-002](../tasks/NX-DS-002.md).
+
+2026-11-18 — [PR #2](https://github.com/EvertonLMsilva/nexolira-design-system/pull/2) aberto para main, sem draft
+e sem merge automático. Oito subtópicos NX-DS-002 concluídos tecnicamente;
+revisão e decisão de merge pertencem ao usuário. Nenhuma adoção real iniciada.
