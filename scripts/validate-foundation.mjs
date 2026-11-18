@@ -78,12 +78,19 @@ const required = ['AGENTS.md', 'README.md', 'package.json', 'docs/STYLE_GUIDE.md
 for (const file of required) check(fs.existsSync(path.join(root, file)), 'Missing required file: ' + file);
 for (const workspace of ['', 'packages/tokens/', 'packages/react/', 'apps/docs/']) {
   const manifest = json(workspace + 'package.json');
-  check(manifest.private === true && manifest.version === '0.0.0' && !manifest.exports, 'Foundation package appears publishable: ' + workspace);
-  check(!manifest.dependencies && !manifest.peerDependencies, 'Premature runtime dependencies: ' + workspace);
+  check(manifest.private === true, 'Local packages must remain private: ' + workspace);
+  if (workspace === 'packages/tokens/' || workspace === 'packages/react/') {
+    check(manifest.version === '0.1.0' && manifest.exports?.['.']?.types && manifest.exports?.['.']?.import && manifest.exports?.['./styles.css'], 'Library export contract: ' + workspace);
+    check(JSON.stringify(manifest.files) === JSON.stringify(['dist', 'README.md']), 'Package allowlist: ' + workspace);
+  }
+  if (workspace === 'packages/react/') {
+    check(manifest.peerDependencies?.react === '19.2.8 || 19.3.1' && manifest.peerDependencies?.['react-dom'] === '19.2.8 || 19.3.1', 'Tested peer contract');
+    check(manifest.dependencies?.['@nexolira/tokens'] === '0.1.0' && Object.keys(manifest.dependencies).length === 1, 'Only tokens may be a UI runtime dependency');
+  }
 }
 check(JSON.stringify(json('package.json').workspaces) === JSON.stringify(['packages/tokens', 'packages/react', 'apps/docs']), 'Workspace contract mismatch');
 const files = [];
-function scan(dir = '') { for (const entry of fs.readdirSync(path.join(root, dir), { withFileTypes: true })) { if (['.git', 'node_modules'].includes(entry.name)) continue; const name = path.posix.join(dir, entry.name); if (entry.isDirectory()) scan(name); else files.push(name); } }
+function scan(dir = '') { for (const entry of fs.readdirSync(path.join(root, dir), { withFileTypes: true })) { if (['.git', 'node_modules', 'dist', '.types', '.artifacts', 'test-results', 'playwright-report'].includes(entry.name)) continue; const name = path.posix.join(dir, entry.name); if (entry.isDirectory()) scan(name); else files.push(name); } }
 scan();
 let localLinks = 0;
 for (const file of files) {
