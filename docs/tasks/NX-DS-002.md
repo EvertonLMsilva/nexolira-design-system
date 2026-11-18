@@ -178,6 +178,19 @@ TYPECHECK: PASS — fontes e ambos os consumidores
 LINT: PASS — deny-warnings
 TESTS: PASS — Vitest + Chromium em React/DOM19.2.8 e19.3.1
 
+NPM_PACK_STATUS: PASS — dois tarballs 0.1.0 inspecionados, sem publicação
+TARBALL_HASHES: @nexolira/tokens=00929c63ce78e70f971455c00bda0b77c7d82d00f506b45c3eb98c1dccbd88d8; @nexolira/ui=2a17fc19be014d5332dc66c8745e33420d2162b786a354c799e842c50195ba3b
+CONSUMER_INSTALL_STATUS: PASS — ambos instalados por tarball em diretórios temporários externos, sem symlinks
+CONSUMER_BUILD_STATUS: PASS — TypeScript e build Vite em React/DOM19.2.8 e19.3.1
+REACT_PEER_STATUS: PASS — peers exatos testados; resolução única de React e React DOM em ambos consumidores
+CSS_CONSUMPTION_STATUS: PASS — exports CSS tipados, import explícito e estilos reais/isolamento verificados em Chromium
+DOCUMENTATION_STATUS: DONE — README, arquitetura, decisões, contratos, roadmap, histórico e task atualizados
+FRONTEND_CONSUMPTION_READINESS: READY_FOR_CONTROLLED_ADOPTION via tarballs; frontend real não instalado nem alterado
+FILES_CREATED: 23 arquivos fonte/tooling/documentação; inventário abaixo; tarballs locais ignorados
+FILES_MODIFIED: 13 arquivos autorizados; inventário abaixo
+PR_STATUS: OPEN — não draft; autoMergeRequest=null; base main
+RISKS: pré-1.0; suporte restrito aos peers e alvos testados; sem certificação integral de acessibilidade ou adoção em produto real
+
 PR: https://github.com/EvertonLMsilva/nexolira-design-system/pull/2
 MERGE_STATUS: NOT_EXECUTED — USER_ONLY_MERGE
 BLOCKERS: NONE
@@ -201,3 +214,51 @@ Diff revisado: somente biblioteca, tooling, testes e documentação autorizados;
 nenhum artefato gerado, credencial ou dado runtime incluído no Git.
 AGENTS, Style Guide e documentos/evidências NX-DS-001 permaneceram inalterados.
 Repositório privado; nenhuma publicação em registry ou adoção de consumidor real.
+
+## Inventário de arquivos da entrega
+
+Criados:
+
+```text
+docs/tasks/NX-DS-002.md
+package-lock.json
+packages/react/src/Badge.tsx
+packages/react/src/Button.tsx
+packages/react/src/Card.tsx
+packages/react/src/FormField.tsx
+packages/react/src/Input.tsx
+packages/react/src/StatusMessage.tsx
+packages/react/src/index.ts
+packages/react/src/styles.css
+packages/react/src/types.ts
+packages/tokens/src/compiler.ts
+packages/tokens/src/index.ts
+scripts/build.mjs
+scripts/pack-smoke.mjs
+test/components.test.tsx
+test/consumer/index.html
+test/consumer/src.tsx
+test/setup.ts
+test/tokens.test.ts
+tsconfig.json
+tsconfig.types.json
+vitest.config.ts
+```
+
+Modificados:
+
+```text
+.gitignore
+README.md
+docs/ARCHITECTURE.md
+docs/DECISIONS.md
+docs/TOPIC_ROADMAP.md
+docs/history/ROADMAP_HISTORY.md
+package.json
+packages/react/CONTRACTS.md
+packages/react/README.md
+packages/react/package.json
+packages/tokens/README.md
+packages/tokens/package.json
+scripts/validate-foundation.mjs
+```
