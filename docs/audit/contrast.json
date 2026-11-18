@@ -1,0 +1,612 @@
+[
+  {
+    "theme": "nexolira.dark",
+    "label": "color.text.primary on color.background",
+    "foreground": "#e5eaf1",
+    "background": "#0e1520",
+    "minimum": 4.5,
+    "ratio": 15.1473,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.text.muted on color.background",
+    "foreground": "#b3c0d1",
+    "background": "#0e1520",
+    "minimum": 4.5,
+    "ratio": 9.9209,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.status.success on color.background",
+    "foreground": "#77e0b5",
+    "background": "#0e1520",
+    "minimum": 4.5,
+    "ratio": 11.4352,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.status.warning on color.background",
+    "foreground": "#f3c969",
+    "background": "#0e1520",
+    "minimum": 4.5,
+    "ratio": 11.6582,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.status.error on color.background",
+    "foreground": "#f6a4a8",
+    "background": "#0e1520",
+    "minimum": 4.5,
+    "ratio": 9.4125,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.status.info on color.background",
+    "foreground": "#8ac5ff",
+    "background": "#0e1520",
+    "minimum": 4.5,
+    "ratio": 10.0377,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.focus on color.background",
+    "foreground": "#6edee0",
+    "background": "#0e1520",
+    "minimum": 3,
+    "ratio": 11.4998,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.border.default on color.background",
+    "foreground": "#71839a",
+    "background": "#0e1520",
+    "minimum": 3,
+    "ratio": 4.7221,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.text.primary on color.surface",
+    "foreground": "#e5eaf1",
+    "background": "#141e2b",
+    "minimum": 4.5,
+    "ratio": 13.893,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.text.muted on color.surface",
+    "foreground": "#b3c0d1",
+    "background": "#141e2b",
+    "minimum": 4.5,
+    "ratio": 9.0994,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.status.success on color.surface",
+    "foreground": "#77e0b5",
+    "background": "#141e2b",
+    "minimum": 4.5,
+    "ratio": 10.4883,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.status.warning on color.surface",
+    "foreground": "#f3c969",
+    "background": "#141e2b",
+    "minimum": 4.5,
+    "ratio": 10.6928,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.status.error on color.surface",
+    "foreground": "#f6a4a8",
+    "background": "#141e2b",
+    "minimum": 4.5,
+    "ratio": 8.633,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.status.info on color.surface",
+    "foreground": "#8ac5ff",
+    "background": "#141e2b",
+    "minimum": 4.5,
+    "ratio": 9.2064,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.focus on color.surface",
+    "foreground": "#6edee0",
+    "background": "#141e2b",
+    "minimum": 3,
+    "ratio": 10.5475,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.border.default on color.surface",
+    "foreground": "#71839a",
+    "background": "#141e2b",
+    "minimum": 3,
+    "ratio": 4.3311,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.text.primary on color.surface.raised",
+    "foreground": "#e5eaf1",
+    "background": "#192534",
+    "minimum": 4.5,
+    "ratio": 12.8147,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.text.muted on color.surface.raised",
+    "foreground": "#b3c0d1",
+    "background": "#192534",
+    "minimum": 4.5,
+    "ratio": 8.3931,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.status.success on color.surface.raised",
+    "foreground": "#77e0b5",
+    "background": "#192534",
+    "minimum": 4.5,
+    "ratio": 9.6742,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.status.warning on color.surface.raised",
+    "foreground": "#f3c969",
+    "background": "#192534",
+    "minimum": 4.5,
+    "ratio": 9.8629,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.status.error on color.surface.raised",
+    "foreground": "#f6a4a8",
+    "background": "#192534",
+    "minimum": 4.5,
+    "ratio": 7.963,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.status.info on color.surface.raised",
+    "foreground": "#8ac5ff",
+    "background": "#192534",
+    "minimum": 4.5,
+    "ratio": 8.4919,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.focus on color.surface.raised",
+    "foreground": "#6edee0",
+    "background": "#192534",
+    "minimum": 3,
+    "ratio": 9.7288,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "color.border.default on color.surface.raised",
+    "foreground": "#71839a",
+    "background": "#192534",
+    "minimum": 3,
+    "ratio": 3.9949,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "primary text on color.action.primary",
+    "foreground": "#0e1520",
+    "background": "#6fa6ff",
+    "minimum": 4.5,
+    "ratio": 7.4768,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "primary text on color.action.primary.hover",
+    "foreground": "#0e1520",
+    "background": "#8ab8ff",
+    "minimum": 4.5,
+    "ratio": 9.0521,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "primary text on color.action.primary.active",
+    "foreground": "#0e1520",
+    "background": "#5792f0",
+    "minimum": 4.5,
+    "ratio": 5.9078,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.dark",
+    "label": "secondary text",
+    "foreground": "#e5eaf1",
+    "background": "#243b53",
+    "minimum": 4.5,
+    "ratio": 9.5157,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.text.primary on color.background",
+    "foreground": "#172334",
+    "background": "#f6f8fc",
+    "minimum": 4.5,
+    "ratio": 14.8905,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.text.muted on color.background",
+    "foreground": "#485b73",
+    "background": "#f6f8fc",
+    "minimum": 4.5,
+    "ratio": 6.5411,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.status.success on color.background",
+    "foreground": "#116842",
+    "background": "#f6f8fc",
+    "minimum": 4.5,
+    "ratio": 6.4073,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.status.warning on color.background",
+    "foreground": "#7a4b00",
+    "background": "#f6f8fc",
+    "minimum": 4.5,
+    "ratio": 6.9695,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.status.error on color.background",
+    "foreground": "#a82432",
+    "background": "#f6f8fc",
+    "minimum": 4.5,
+    "ratio": 6.6651,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.status.info on color.background",
+    "foreground": "#165b95",
+    "background": "#f6f8fc",
+    "minimum": 4.5,
+    "ratio": 6.6625,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.focus on color.background",
+    "foreground": "#005a78",
+    "background": "#f6f8fc",
+    "minimum": 3,
+    "ratio": 7.2251,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.border.default on color.background",
+    "foreground": "#61748e",
+    "background": "#f6f8fc",
+    "minimum": 3,
+    "ratio": 4.4919,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.text.primary on color.surface",
+    "foreground": "#172334",
+    "background": "#ffffff",
+    "minimum": 4.5,
+    "ratio": 15.832,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.text.muted on color.surface",
+    "foreground": "#485b73",
+    "background": "#ffffff",
+    "minimum": 4.5,
+    "ratio": 6.9547,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.status.success on color.surface",
+    "foreground": "#116842",
+    "background": "#ffffff",
+    "minimum": 4.5,
+    "ratio": 6.8124,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.status.warning on color.surface",
+    "foreground": "#7a4b00",
+    "background": "#ffffff",
+    "minimum": 4.5,
+    "ratio": 7.4102,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.status.error on color.surface",
+    "foreground": "#a82432",
+    "background": "#ffffff",
+    "minimum": 4.5,
+    "ratio": 7.0865,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.status.info on color.surface",
+    "foreground": "#165b95",
+    "background": "#ffffff",
+    "minimum": 4.5,
+    "ratio": 7.0837,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.focus on color.surface",
+    "foreground": "#005a78",
+    "background": "#ffffff",
+    "minimum": 3,
+    "ratio": 7.682,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.border.default on color.surface",
+    "foreground": "#61748e",
+    "background": "#ffffff",
+    "minimum": 3,
+    "ratio": 4.7759,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.text.primary on color.surface.raised",
+    "foreground": "#172334",
+    "background": "#edf2f8",
+    "minimum": 4.5,
+    "ratio": 14.0657,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.text.muted on color.surface.raised",
+    "foreground": "#485b73",
+    "background": "#edf2f8",
+    "minimum": 4.5,
+    "ratio": 6.1788,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.status.success on color.surface.raised",
+    "foreground": "#116842",
+    "background": "#edf2f8",
+    "minimum": 4.5,
+    "ratio": 6.0524,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.status.warning on color.surface.raised",
+    "foreground": "#7a4b00",
+    "background": "#edf2f8",
+    "minimum": 4.5,
+    "ratio": 6.5835,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.status.error on color.surface.raised",
+    "foreground": "#a82432",
+    "background": "#edf2f8",
+    "minimum": 4.5,
+    "ratio": 6.2959,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.status.info on color.surface.raised",
+    "foreground": "#165b95",
+    "background": "#edf2f8",
+    "minimum": 4.5,
+    "ratio": 6.2935,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.focus on color.surface.raised",
+    "foreground": "#005a78",
+    "background": "#edf2f8",
+    "minimum": 3,
+    "ratio": 6.8249,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "color.border.default on color.surface.raised",
+    "foreground": "#61748e",
+    "background": "#edf2f8",
+    "minimum": 3,
+    "ratio": 4.2431,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "primary text on color.action.primary",
+    "foreground": "#ffffff",
+    "background": "#1d4ed8",
+    "minimum": 4.5,
+    "ratio": 6.7016,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "primary text on color.action.primary.hover",
+    "foreground": "#ffffff",
+    "background": "#1e40af",
+    "minimum": 4.5,
+    "ratio": 8.7224,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "primary text on color.action.primary.active",
+    "foreground": "#ffffff",
+    "background": "#1e3a8a",
+    "minimum": 4.5,
+    "ratio": 10.358,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "nexolira.light",
+    "label": "secondary text",
+    "foreground": "#172334",
+    "background": "#e2e8f0",
+    "minimum": 4.5,
+    "ratio": 12.8425,
+    "pass": true,
+    "gate": true
+  },
+  {
+    "theme": "mktauto-source",
+    "label": "on-primary token on primary token (not actual gradient)",
+    "foreground": "#ffffff",
+    "background": "#008cff",
+    "minimum": 4.5,
+    "ratio": 3.3897,
+    "pass": false,
+    "gate": false
+  },
+  {
+    "theme": "mktauto-source",
+    "label": "primary gradient first endpoint",
+    "foreground": "#ffffff",
+    "background": "#0875dd",
+    "minimum": 4.5,
+    "ratio": 4.5663,
+    "pass": true,
+    "gate": false
+  },
+  {
+    "theme": "mktauto-source",
+    "label": "hover gradient first endpoint",
+    "foreground": "#ffffff",
+    "background": "#0879e2",
+    "minimum": 4.5,
+    "ratio": 4.3357,
+    "pass": false,
+    "gate": false
+  },
+  {
+    "theme": "plat008-source",
+    "label": "functional border on surface",
+    "foreground": "#253244",
+    "background": "#141e2b",
+    "minimum": 3,
+    "ratio": 1.2944,
+    "pass": false,
+    "gate": false
+  },
+  {
+    "theme": "market-direction-source",
+    "label": "28% green focus ring composited on surface",
+    "foreground": "#14574a",
+    "background": "#1c202b",
+    "minimum": 3,
+    "ratio": 1.9304,
+    "pass": false,
+    "gate": false
+  }
+]

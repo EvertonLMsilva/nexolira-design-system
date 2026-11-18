@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-11-18T14:14:58.389Z",
+  "node": "v24.22.1",
+  "status": "PASS",
+  "requiredFiles": 22,
+  "filesChecked": 38,
+  "localLinks": 65,
+  "matrixRows": 24,
+  "primitives": 68,
+  "semanticTokensPerTheme": 54,
+  "componentAliases": 5,
+  "contrastGatePairs": 56,
+  "contrastGateFailures": 0,
+  "minimumReferenceTextRatio": 5.9078,
+  "minimumReferenceCueRatio": 3.9949,
+  "failures": []
+}

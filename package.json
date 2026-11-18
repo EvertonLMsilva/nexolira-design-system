@@ -1,0 +1,16 @@
+{
+  "name": "nexolira-design-system-foundation",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "packages/tokens",
+    "packages/react",
+    "apps/docs"
+  ],
+  "scripts": {
+    "validate": "node scripts/validate-foundation.mjs",
+    "validate:references": "node scripts/validate-foundation.mjs --check-references"
+  }
+}
