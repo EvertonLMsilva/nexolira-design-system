@@ -1,121 +1,21 @@
-# Contratos React — API local0.1.0
+# Contrato React 0.2.0
 
-NX-DS-002 implementa Button, Card/Panel (mesma função), Badge, StatusMessage,
-Input e FormField. API normativa nas declarações emitidas e exports de index.ts.
-Peers comprovados por consumidores tarball: React/DOM19.2.8 e19.3.1, sempre
-no mesmo par. CSS explícito com declarations de import de efeito; ESM ES2022.
+Os tipos públicos vêm de `@nexolira/ui`. Os componentes recebem dados, rótulos e eventos do consumidor. O bundle é ESM e mantém React e React DOM como peers. As interfaces TypeScript emitidas em `dist/*.d.ts` são a referência de assinatura.
 
-FormField usa renderControl, sem clone de filhos. Button loading preserva
-rótulo e aplica disabled nativo/aria-busy; o controle sai da ordem de Tab.
-Card aceita heading/headingLevel; sem heading (inclusive false) usa div,
-com heading usa section rotulada por useId. Ações ficam em controles próprios.
-Nenhum anúncio automático em Badge; StatusMessage announcement=off por default.
+| API | Contrato público e exemplo de uso |
+|---|---|
+| Button, IconButton | Botão nativo com três variantes, tamanhos, ref, disabled e loading. O padrão é type=button. IconButton exige aria-label e esconde o ícone decorativo da árvore acessível. |
+| Card, Panel | Mesma implementação. Com heading produz região nomeada e nível configurável. Sem heading produz agrupamento comum. A ação é um elemento separado. |
+| Badge, StatusMessage | Badge é estático. StatusMessage escolhe announcement off, polite ou assertive e busy. O consumidor fornece o significado textual. |
+| Input, Textarea, Select, DateInput, TimeInput | Atributos, ref, valor e eventos nativos. Para busca + seleção, o exemplo de listas utiliza Input type=search com Select filtrado por texto. Data e hora são valores locais de formulário. |
+| Radio, Switch, Checkbox, CheckboxGroup | Controles nativos com label visível. Radios com o mesmo name formam uma escolha. Switch expõe role=switch. CheckboxGroup usa fieldset/legend e admite disabled para o grupo. |
+| FormField, FieldAction, CharacterCount, FileUpload | FormField associa id, erro e hint via renderControl. FieldAction recebe controle e ação independentes. CharacterCount usa o comprimento UTF-16 do maxlength HTML. FileUpload produz um input file com hint e onChange; o chamador controla leitura e destino. |
+| AppShell, Sidebar, NavigationItem, PageHeader, Breadcrumb | Slots de navegação, cabeçalho e conteúdo. O host escolhe a rota e marca o item atual. Sidebar é nav e NavigationItem é link nativo. Até 900px a navegação móvel substitui a coluna lateral. |
+| Accordion, Tabs | Disclosure nativo com summary e details. Tabs usa IDs por instância, aria-controls, roving tabindex e seleção controlada. Setas, Home e End ignoram abas desabilitadas. Forneça um value existente e habilitado. |
+| Dialog, Drawer, ConfirmDialog | open e onOpenChange controlam a visibilidade. title nomeia a superfície modal e description é opcional. Escape, backdrop e botão fechar solicitam fechamento. initialFocusRef e portalContainer são opcionais. Drawer aceita side start/end. O chamador decide confirmação e descarte. |
+| Stepper, ActionFooter | Stepper recebe itens com ID e estado completed, current, pending, blocked ou review e emite o ID escolhido. A aplicação determina a etapa permitida. ActionFooter agrupa ações reais do consumidor. |
+| Table, Pagination, SelectionList | Table exige caption e preserva a semântica de thead/th/tbody. A tabela rola no próprio contêiner. Pagination usa hasPrevious/hasNext/loading. SelectionList é controlada por IDs, com seleção múltipla e itens desabilitados. |
+| MetricCard, Progress, DetailList, EmptyState, Skeleton, Divider | Apresentação de dados e estados de leitura. Valor, tendência, total, unidade, origem e rótulos vêm do chamador. Progress sem valor é indeterminado. |
+| MediaPicker, MediaGallery, MediaViewer | MediaPicker alterna o item em edição. MediaGallery recebe itens, grupos e seleção múltipla. A ação de ampliar é independente da seleção. MediaViewer aceita imagem ou vídeo, controles nativos e trilha de legenda opcional. Mídia e permissões são do chamador. |
 
-As seções abaixo conservam os princípios e propostas da fundação; componentes
-fora da fatia implementada continuam propostas, sem contrato público compilado.
-
-## Princípios da fundação
-
-Alvo inicial proposto: React 19; manifests auditados usam 19.3.1 (MKTauto e Portal
-local) e 19.2.8 (Market Direction). São versões OBSERVADAS nos arquivos locais,
-não recomendação de versão atual do registry. Não há suporte publicado comprovado.
-
-No NX-DS-002, React e React DOM serão peer dependencies conforme o uso do pacote,
-e devDependencies somente para desenvolver/testar. Bundler deve externalizar
-react, react-dom e subpaths, incluindo react/jsx-runtime.
-Definir range somente após testar versões reais; não alegar suporte a React 18.
-
-## APIs e composição
-
-Estender atributos nativos TypeScript por elemento, omitindo conflitos como size
-quando houver escala visual. Evitar booleanos redundantes, props polimórficas
-universais e asChild sem necessidade concreta. children usa ReactNode, eventos
-usam assinaturas nativas, className é aditiva sem apagar classe nx do componente.
-
-Button é button. Links usam elemento a ou adaptador externo do router;
-nenhuma dependência react-router entra no núcleo.
-Ref expõe nó DOM, não implementação interna. Para o alvo 19, ref pode ser prop;
-se suporte a versões antigas for decidido, reavaliar forwardRef e testar.
-[Documentação oficial React](https://react.dev/reference/react/forwardRef).
-
-Variantes expressam intenção, tamanho sm/md/lg e estado separado de tema.
-Não receber valores como LICENSED ou QUOTA_ALLOWED para decidir visual.
-Não capturar estado de negócio, fetch, auth, form schema de serviços ou retry
-automático. Aceitar dados/conteúdo e callbacks controlados do consumidor.
-
-Render props controladas são aceitáveis para associar FormField ao elemento
-nativo, sem clonar filhos arbitrários. useId ou id explícito preserva associação
-em SSR/múltiplas instâncias; roots independentes devem definir identifierPrefix
-quando necessário. A documentação de integração deverá provar esse caso.
-
-## HTML, foco e estados
-
-Nome acessível obrigatório em todo controle; labels não substituídos por ícones.
-Usar atributos nativos, aria-describedby/invalid e fieldset/legend quando aplicáveis.
-Ícone decorativo aria-hidden; ícone informativo requer título/nome explícito.
-Loading não comunica sucesso nem habilita repetição de ação.
-Definir quando desabilitar nativamente e como preservar/restaurar foco; comparar
-aria-disabled com native disabled em testes antes de firmar API.
-
-Alert/status não são equivalentes: anúncios dependem do contexto e da mudança,
-não apenas do tom vermelho/verde. Badge estático não cria região viva.
-Dialog precisa Escape, foco inicial, contenção, retorno e portal no tema correto.
-
-## Estilos e testes
-
-Classes nx-*; tokens semânticos e de componente --nx-*, sem cores literais
-espalhadas. Importação CSS explícita, sem body/reset global. Consumo sem host
-conhecido deve ser diagnosticado na documentação; defaults .nx-scope.
-
-Testes futuros com Testing Library/user-event e Vitest reaproveitam metodologia,
-sem copiar fixtures privadas. Provar ativação por teclado, type default,
-disabled/loading, nome/descrição/erro, variantes relevantes, refs e composição.
-Adicionar verificações automatizadas de acessibilidade, sem chamá-las de
-certificação; browser local determinístico para foco/layout/portais que jsdom
-não comprova. Sem navegador assistido por IA.
-
-No NX-DS-002, compilar exemplos TypeScript públicos, testar build, exports, CSS
-e consumidor descartável com única cópia de React. Não criar testes de
-componentes inexistentes nesta etapa.
-
-
-## Exemplos de contratos TypeScript propostos
-
-Exemplos documentais, sem arquivo de declaração compilado ou API publicada:
-
-```ts
-import type { ButtonHTMLAttributes, HTMLAttributes, ReactNode, Ref } from 'react'
-type Tone = 'neutral' | 'info' | 'success' | 'warning' | 'error'
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost'
-  size?: 'sm' | 'md' | 'lg'
-  loading?: boolean
-  ref?: Ref<HTMLButtonElement>
-}
-interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
-  tone?: Tone
-}
-interface StatusMessageProps extends HTMLAttributes<HTMLDivElement> {
-  tone?: Tone
-  announcement?: 'off' | 'polite' | 'assertive'
-  busy?: boolean
-}
-interface PanelProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> {
-  heading?: ReactNode
-  headingLevel?: 2 | 3 | 4 | 5 | 6
-  description?: ReactNode
-  action?: ReactNode
-}
-```
-
-Defaults propostos: Button variant=primary, size=md, type=button e
-loading=false; Badge tone=neutral; StatusMessage announcement=off.
-Panel sem heading usa div; section nomeada requer heading/id associados.
-Validar conflitos de atributos, refs e políticas de foco antes de implementar.
-
-FormField propõe id/label/hint/error/required e renderControl com id,
-aria-describedby e aria-invalid; Input/Textarea/Select/Checkbox estendem
-atributos nativos e expõem ref do elemento. Pagination recebe hasPrevious,
-hasNext, onPrevious, onNext, loading e label, sem total obrigatório.
-Dialog recebe open/onOpenChange, title/description, children, initialFocusRef
-e portalContainer; contrato ainda exige testes completos de teclado/foco.
+As classes da biblioteca têm prefixo `nx-`. O tema e a ordem de importação estão no [guia de consumo](../../docs/integration/MKTauto.md). O [catálogo executável](../../apps/docs/README.md) exercita os comportamentos na mesma versão dos componentes.

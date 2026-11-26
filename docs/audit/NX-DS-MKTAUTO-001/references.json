@@ -1,0 +1,396 @@
+{
+  "standaloneHash": "51c16ae74cf100e0e0740f6b737273ffe9eccf47355b8630d3b31b328e578f7c",
+  "cssMatches": true,
+  "scripts": [
+    {
+      "file": "agenda-nav.js",
+      "embeddedExactly": true,
+      "functions": [
+        "d9SetGroup",
+        "d9Canon",
+        "d9SyncNav"
+      ]
+    },
+    {
+      "file": "canais.js",
+      "embeddedExactly": true,
+      "functions": [
+        "d8Formats",
+        "d8CoverAllowed",
+        "d8Config",
+        "d8Trigger",
+        "d8Summary",
+        "d8CoverForm",
+        "d8Open",
+        "updateCover",
+        "close",
+        "d8Schedule"
+      ]
+    },
+    {
+      "file": "configuracoes.js",
+      "embeddedExactly": true,
+      "functions": [
+        "d10Type",
+        "d10Settings",
+        "d10TypeOptions",
+        "d10AuthFields",
+        "d10Editor",
+        "d10UpdateAuth"
+      ]
+    },
+    {
+      "file": "demo.js",
+      "embeddedExactly": true,
+      "functions": [
+        "escapeHtml",
+        "metric",
+        "variation",
+        "delta",
+        "routeInfo",
+        "listHash",
+        "internalHash",
+        "campaignName",
+        "status",
+        "renderDashboard",
+        "renderEvents",
+        "renderCampaigns",
+        "originLink",
+        "returnLink",
+        "renderDetail",
+        "render",
+        "announce"
+      ]
+    },
+    {
+      "file": "destinos.js",
+      "embeddedExactly": true,
+      "functions": [
+        "publishableDestinations",
+        "d7Sync",
+        "d7Groups",
+        "d7ProfileTabs",
+        "d7LinkEditor",
+        "d7Error",
+        "d7Saved",
+        "reviewTargets"
+      ]
+    },
+    {
+      "file": "galeria.js",
+      "embeddedExactly": true,
+      "functions": [
+        "galleryArtwork",
+        "galleryDates",
+        "galleryDefaults",
+        "galleryOptions",
+        "galleryDraft",
+        "galleryTextCapabilities",
+        "gallerySuggest",
+        "galleryItemText",
+        "galleryCopyLabel",
+        "gallerySelectedDateMarkup",
+        "galleryPlan",
+        "galleryErrors",
+        "galleryRead",
+        "galleryHidden",
+        "galleryScheduleFields",
+        "galleryScheduleMarkup",
+        "galleryInitialSchedule",
+        "gallerySyncSchedule",
+        "gallerySummary",
+        "galleryState",
+        "galleryPanel",
+        "galleryTile",
+        "galleryViewer",
+        "galleryVariantMarkup",
+        "galleryCopyMarkup",
+        "gallerySelectedItem",
+        "gallerySyncCopy",
+        "galleryCopyOverride",
+        "galleryWriteCopy",
+        "galleryInitialCopy",
+        "galleryContext",
+        "galleryRefresh",
+        "galleryUpdateSlot",
+        "galleryUpdateStart",
+        "galleryPlanReview",
+        "galleryPlanStale",
+        "galleryQueue"
+      ]
+    },
+    {
+      "file": "mobile-nav.js",
+      "embeddedExactly": true,
+      "functions": [
+        "sync",
+        "show",
+        "close"
+      ]
+    },
+    {
+      "file": "modulos.js",
+      "embeddedExactly": true,
+      "functions": [
+        "moduleNav",
+        "safeBack",
+        "h",
+        "here",
+        "backOf",
+        "uxLink",
+        "uxBack",
+        "uxBtn",
+        "heading",
+        "panel",
+        "bodyPanel",
+        "note",
+        "badge",
+        "cards",
+        "facts",
+        "tableOf",
+        "tabs",
+        "filtersUx",
+        "field",
+        "selectField",
+        "textareaField",
+        "bioCount",
+        "socialBioField",
+        "buildSocialBio",
+        "generateSocialBio",
+        "check",
+        "formUX",
+        "obj",
+        "rowsUx",
+        "camp",
+        "run",
+        "invalid",
+        "detailCampaign",
+        "getPub",
+        "pubLabel",
+        "execLinks",
+        "listProfiles",
+        "profileDetail",
+        "profileEditor",
+        "profileHistory",
+        "addCampaignEntry",
+        "addCampaignDetailEntry",
+        "campaignFlow",
+        "runList",
+        "executionDetail",
+        "mediaDetail",
+        "publicationDetail",
+        "reportProduct",
+        "reportMatches",
+        "reportOptions",
+        "reportPage",
+        "operationalPage",
+        "operationalDetail",
+        "visualPage",
+        "linkedPage",
+        "renderModule",
+        "moduleAfterRender",
+        "refreshUx",
+        "confirmUx"
+      ]
+    },
+    {
+      "file": "paginas.js",
+      "embeddedExactly": true,
+      "functions": [
+        "d16Profile",
+        "d16PageCopy",
+        "d16CopyFields",
+        "d16ChannelIdentity",
+        "d16AccountIdentity",
+        "d16Suggest",
+        "d15EligibleAccounts",
+        "d15CapabilityFields",
+        "d15PageTools",
+        "d15CreatePage",
+        "cancel"
+      ]
+    },
+    {
+      "file": "refinamento.js",
+      "embeddedExactly": true,
+      "functions": [
+        "keywordsFor",
+        "textAI",
+        "makeProposal",
+        "makePiece",
+        "coverMarkup",
+        "generateCover",
+        "timesOf",
+        "timeSlots",
+        "timeSlot",
+        "searchState",
+        "matchedOffers",
+        "offerFacts",
+        "campaignOffer",
+        "createOfferCampaign",
+        "flowFor",
+        "targetRuns",
+        "createTargets",
+        "progressBar",
+        "offerRow",
+        "flowUrl",
+        "pauseBlocked",
+        "pubProgress",
+        "completeReceipt",
+        "bulkUpdate",
+        "createSelected",
+        "markChanged",
+        "setCover",
+        "publicationCopyFacts"
+      ]
+    }
+  ],
+  "navigation": [
+    {
+      "text": "Dashboard",
+      "href": "#dashboard"
+    },
+    {
+      "text": "♙Perfis de Vendas",
+      "href": "#perfis"
+    },
+    {
+      "text": "Todos os perfis",
+      "href": "#perfis"
+    },
+    {
+      "text": "Novo perfil",
+      "href": "#perfil-editar?id=novo&etapa=destinos&voltar=%23perfis"
+    },
+    {
+      "text": "Canais de divulgação",
+      "href": "#perfil-canais"
+    },
+    {
+      "text": "Campanhas",
+      "href": "#campanhas"
+    },
+    {
+      "text": "▤Pipeline",
+      "href": "#pipeline"
+    },
+    {
+      "text": "▧Mídia",
+      "href": "#midias"
+    },
+    {
+      "text": "↗Publicação",
+      "href": "#publicacao"
+    },
+    {
+      "text": "▥Relatórios",
+      "href": "#relatorios"
+    },
+    {
+      "text": "⌕Consultas Operacionais",
+      "href": "#consultas-operacionais"
+    },
+    {
+      "text": "Todas as consultas",
+      "href": "#consultas-operacionais"
+    },
+    {
+      "text": "Sessão QC",
+      "href": "#sessao-demo?voltar=%23consultas-operacionais"
+    },
+    {
+      "text": "⚙Configurações",
+      "href": "#configuracoes"
+    },
+    {
+      "text": "Canais cadastrados",
+      "href": "#configuracoes"
+    },
+    {
+      "text": "Novo canal",
+      "href": "#canal-editar?id=novo&voltar=%23configuracoes"
+    },
+    {
+      "text": "◇Base visual",
+      "href": "#base-visual"
+    }
+  ],
+  "sourceFiles": [
+    "agenda-nav.js",
+    "canais.js",
+    "configuracoes.js",
+    "demo.js",
+    "destinos.js",
+    "EVIDENCIA-D10.md",
+    "EVIDENCIA-D13.md",
+    "EVIDENCIA-D14.md",
+    "EVIDENCIA-D15.md",
+    "EVIDENCIA-D16.md",
+    "EVIDENCIA-D17.md",
+    "EVIDENCIA-D18.md",
+    "EVIDENCIA-D19.md",
+    "EVIDENCIA-D7.md",
+    "EVIDENCIA-D8.md",
+    "EVIDENCIA-D9.md",
+    "EVIDENCIA-GALERIA.md",
+    "evidencia.md",
+    "galeria.js",
+    "index.html",
+    "INTEGRACAO-NEXOLIRA.md",
+    "inventario.md",
+    "LEIA-ME.md",
+    "mapa-navegacao.md",
+    "mobile-nav.js",
+    "modulos.js",
+    "paginas.js",
+    "qa-agenda-nav.json",
+    "qa-apresentacao.json",
+    "qa-canais-extra.json",
+    "qa-canais.json",
+    "qa-d10-regressao.json",
+    "qa-d10.json",
+    "qa-d14.json",
+    "qa-d15-regressao.json",
+    "qa-d15.json",
+    "qa-d16-regressao-campanhas.json",
+    "qa-d16-regressao-paginas.json",
+    "qa-d16.json",
+    "qa-d17-agenda-posts.json",
+    "qa-d17-regressao-campanhas.json",
+    "qa-d17-regressao-paginas.json",
+    "qa-d17.json",
+    "qa-d18-regressao-campanhas.json",
+    "qa-d18.json",
+    "qa-d19-programacao.json",
+    "qa-d19-regressao-campanhas.json",
+    "qa-d19-regressao-descricoes.json",
+    "qa-destinos.json",
+    "qa-galeria.json",
+    "qa-mobile.json",
+    "qa-programacao.json",
+    "qa-refinamento.json",
+    "qa-resultados.json",
+    "refinamento.js",
+    "style.css",
+    "test-agenda-nav-D9-historico.py",
+    "test-d10-regressao.py",
+    "test-d10.py",
+    "test-d14.py",
+    "test-d15-regressao.py",
+    "test-d15.py",
+    "test-d16-regressao-campanhas.py",
+    "test-d16-regressao-paginas.py",
+    "test-d16.py",
+    "test-d17-agenda-posts.py",
+    "test-d17-regressao-campanhas.py",
+    "test-d17-regressao-paginas.py",
+    "test-d17.py",
+    "test-d18-regressao-campanhas.py",
+    "test-d18.py",
+    "test-d19-programacao.py",
+    "test-d19-regressao-campanhas.py",
+    "test-d19-regressao-descricoes.py",
+    "test-galeria.py",
+    "test-programacao.py"
+  ]
+}

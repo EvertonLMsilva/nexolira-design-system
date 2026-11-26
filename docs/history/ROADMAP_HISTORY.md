@@ -30,3 +30,7 @@ alterado, pacote publicado ou merge executado nesta task. Evidências em
 2026-11-18 — [PR #2](https://github.com/EvertonLMsilva/nexolira-design-system/pull/2) aberto para main, sem draft
 e sem merge automático. Oito subtópicos NX-DS-002 concluídos tecnicamente;
 revisão e decisão de merge pertencem ao usuário. Nenhuma adoção real iniciada.
+
+## 26/11/2026
+
+O PARENT NX-DS-MKTAUTO-001 partiu do merge do PR #2. A versão 0.2.0 acrescenta a identidade MKTauto, navegação, campos, overlays e coleções em um catálogo independente. [Registro da entrega](../tasks/NX-DS-MKTAUTO-001.md).

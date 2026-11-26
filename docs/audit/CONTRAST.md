@@ -1,7 +1,7 @@
 # Contraste — método e limites
 
 A validação calcula luminância relativa sRGB e razão (Lmaior+0.05)/(Lmenor+0.05).
-Resultados reproduzíveis em contrast.json. Nenhum navegador foi utilizado.
+Resultados reproduzíveis em contrast.json. O cálculo dos pares opera sobre os tokens resolvidos. O ensaio de navegador consta na task da versão.
 O gate da referência verifica texto primário/auxiliar/estados sobre três
 superfícies, texto das ações normal/hover/active e secundária: mínimo 4.5:1.
 Foco e borda funcional contra as três superfícies: mínimo 3:1.
@@ -28,7 +28,11 @@ A referência só é aceita se todos os pares de gate passarem.
 Não comprova acessibilidade de componentes ainda inexistentes.
 
 
-## Resultados da referência
+## Resultados da versão 0.2.0
+
+Os 140 pares obrigatórios incluem as duas marcas e ambos os modos. A menor razão textual medida foi 5,6934:1 e a menor razão de foco/borda foi 3,9949:1. O JSON inclui cinco diagnósticos históricos fora do gate.
+
+## Fundação 0.1.0
 
 Os 56 pares do conjunto Nexolira dark/light passaram: menor razão textual
 5.9078:1; menor razão de foco/borda funcional 3.9949:1. Isso valida apenas

@@ -1,6 +1,6 @@
 {
   "name": "@nexolira/ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "license": "UNLICENSED",
@@ -22,7 +22,7 @@
     "**/*.css"
   ],
   "dependencies": {
-    "@nexolira/tokens": "0.1.0"
+    "@nexolira/tokens": "0.2.0"
   },
   "peerDependencies": {
     "react": "19.2.8 || 19.3.1",

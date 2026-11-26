@@ -43,7 +43,7 @@ Não criar famílias inteiras para componentes sem implementação/uso comprovad
 ## Defaults, variações e sobrescrita
 
 .nx-scope estabelece defaults Nexolira dark e todos os aliases.
-data-nx-theme="nexolira" também estabelece esse conjunto sem classe.
+data-nx-theme="nexolira" também estabelece esse conjunto sem classe. A identidade mktauto está disponível com os dois modos. Os papéis color.sidebar.* e color.selected.* existem em todos os pares.
 data-nx-mode="light" no mesmo host seleciona a variação light; ausência indica
 dark. Modos desconhecidos não são suportados e recebem a base dark.
 Todo novo tema precisa fornecer o mesmo conjunto semântico. Nenhum depende
@@ -69,6 +69,5 @@ documentado e testes; não sumir silenciosamente. Adições compatíveis são MI
 correção de valor dentro do contrato e acessibilidade preservada pode ser PATCH.
 Troca de identidade ou contraste/layout incompatível exige MAJOR mesmo sem rename.
 
-Tokens e UI terão versões coordenadas inicialmente; range de compatibilidade
-será comprovado no NX-DS-002. Não executar consumo com versão arbitrária.
+Os pacotes tokens e UI usam a versão coordenada 0.2.0. O smoke instala os tarballs exatos em consumidores separados.
 [Política de distribuição](DISTRIBUTION.md).

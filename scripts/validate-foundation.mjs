@@ -1,3 +1,4 @@
+import { compileTokens } from '../packages/tokens/src/compiler.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -32,13 +33,7 @@ for (const [name, theme] of Object.entries(token.themes)) {
   for (const [key, value] of Object.entries(token.components)) check(alias(value) in theme, 'Component must reference semantic: ' + key);
   for (const key of allNames) { try { resolve(key, { ...token.primitives, ...theme, ...token.components }); } catch (e) { failures.push(name + ': ' + e.message); } }
 }
-function cssBlock(selector, theme) {
-  const declarations = Object.entries({ ...token.primitives, ...theme, ...token.components }).map(([key, value]) => `  ${cssName(key)}: ${alias(value) ? 'var(' + cssName(alias(value)) + ')' : value};`);
-  return selector + ' {\n' + declarations.join('\n') + '\n}\n';
-}
-const css = '/* NX-DS-001 reference only. Generated from tokens.json; no package export. */\n' +
-  cssBlock('.nx-scope,\n[data-nx-theme="nexolira"]', token.themes['nexolira.dark']) + '\n' +
-  cssBlock('.nx-scope[data-nx-mode="light"],\n[data-nx-theme="nexolira"][data-nx-mode="light"]', token.themes['nexolira.light']);
+const css = compileTokens(token).css;
 if (process.argv.includes('--write-css')) fs.writeFileSync(path.join(root, 'packages/tokens/reference/tokens.css'), css);
 check(read('packages/tokens/reference/tokens.css') === css, 'CSS projection drift');
 check(!/:root|@import|!important|(^|\n)(html|body)\b/.test(css), 'CSS leaks global styles');
@@ -64,6 +59,13 @@ for (const [name, theme] of Object.entries(token.themes)) {
     for (const cue of ['color.focus', 'color.border.default']) pair(name, cue + ' on ' + surface, value(cue), value(surface), 3);
   }
   for (const state of ['color.action.primary', 'color.action.primary.hover', 'color.action.primary.active']) pair(name, 'primary text on ' + state, value('color.text.on-primary'), value(state), 4.5);
+  pair(name, 'sidebar text', value('color.sidebar.text'), value('color.sidebar.background'), 4.5);
+  pair(name, 'sidebar heading', value('color.sidebar.heading'), value('color.sidebar.background'), 4.5);
+  pair(name, 'sidebar hover', value('color.sidebar.text'), value('color.sidebar.hover'), 4.5);
+  pair(name, 'sidebar selected', value('color.sidebar.selected-text'), value('color.sidebar.selected'), 4.5);
+  pair(name, 'sidebar indicator', value('color.sidebar.indicator'), value('color.sidebar.selected'), 3);
+  pair(name, 'sidebar focus', value('color.sidebar.focus'), value('color.sidebar.background'), 3);
+  pair(name, 'selected label', value('color.selected.text'), value('color.selected.background'), 4.5);
   pair(name, 'secondary text', value('color.text.on-secondary'), value('color.secondary'), 4.5);
 }
 // Source diagnostics are evidence of specific pairs, not gates for unchanged products.
@@ -80,12 +82,12 @@ for (const workspace of ['', 'packages/tokens/', 'packages/react/', 'apps/docs/'
   const manifest = json(workspace + 'package.json');
   check(manifest.private === true, 'Local packages must remain private: ' + workspace);
   if (workspace === 'packages/tokens/' || workspace === 'packages/react/') {
-    check(manifest.version === '0.1.0' && manifest.exports?.['.']?.types && manifest.exports?.['.']?.import && manifest.exports?.['./styles.css'], 'Library export contract: ' + workspace);
+    check(manifest.version === json('package.json').version && manifest.exports?.['.']?.types && manifest.exports?.['.']?.import && manifest.exports?.['./styles.css'], 'Library export contract: ' + workspace);
     check(JSON.stringify(manifest.files) === JSON.stringify(['dist', 'README.md']), 'Package allowlist: ' + workspace);
   }
   if (workspace === 'packages/react/') {
     check(manifest.peerDependencies?.react === '19.2.8 || 19.3.1' && manifest.peerDependencies?.['react-dom'] === '19.2.8 || 19.3.1', 'Tested peer contract');
-    check(manifest.dependencies?.['@nexolira/tokens'] === '0.1.0' && Object.keys(manifest.dependencies).length === 1, 'Only tokens may be a UI runtime dependency');
+    check(manifest.dependencies?.['@nexolira/tokens'] === json('package.json').version && Object.keys(manifest.dependencies).length === 1, 'Only tokens may be a UI runtime dependency');
   }
 }
 check(JSON.stringify(json('package.json').workspaces) === JSON.stringify(['packages/tokens', 'packages/react', 'apps/docs']), 'Workspace contract mismatch');
@@ -94,6 +96,11 @@ function scan(dir = '') { for (const entry of fs.readdirSync(path.join(root, dir
 scan();
 let localLinks = 0;
 for (const file of files) {
+  if (/^docs\/audit\/NX-DS-MKTAUTO-001\/catalog-(light|dark)-(320|1440)\.png$/.test(file)) {
+    const bytes = fs.readFileSync(path.join(root, file));
+    check(bytes.subarray(0, 8).equals(Buffer.from('89504e470d0a1a0a', 'hex')), 'Invalid catalog capture: ' + file);
+    continue;
+  }
   const text = read(file);
   check(!/[\t ]+\r?$/m.test(text), 'Trailing whitespace: ' + file);
   if (file.endsWith('.json')) { try { JSON.parse(text); } catch { failures.push('Invalid JSON: ' + file); } }

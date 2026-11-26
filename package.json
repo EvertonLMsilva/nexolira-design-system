@@ -1,6 +1,6 @@
 {
   "name": "nexolira-design-system",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "license": "UNLICENSED",
@@ -16,11 +16,13 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "typecheck": "tsc --noEmit",
-    "lint": "oxlint --deny-warnings packages/react/src packages/tokens/src scripts test",
+    "lint": "oxlint --deny-warnings packages/react/src packages/tokens/src scripts test apps/docs",
     "test": "vitest run",
     "validate": "node scripts/validate-foundation.mjs",
     "validate:references": "node scripts/validate-foundation.mjs --check-references",
-    "pack:verify": "node scripts/pack-smoke.mjs"
+    "pack:verify": "node scripts/pack-smoke.mjs",
+    "catalog": "vite apps/docs --host 127.0.0.1",
+    "catalog:build": "vite build apps/docs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",

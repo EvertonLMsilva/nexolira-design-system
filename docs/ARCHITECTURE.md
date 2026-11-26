@@ -1,7 +1,6 @@
 # Arquitetura do Design System
 
-Estado atual NX-DS-002: pacotes privados locais 0.1.0; contrato público e
-verificações em [task NX-DS-002](tasks/NX-DS-002.md). Sem adoção em produto.
+Na versão 0.2.0, tokens e UI permanecem pacotes privados locais. O catálogo consome seus exports públicos. Os exemplos usam apenas estado React e recursos locais do navegador. [Entrega D19](tasks/NX-DS-MKTAUTO-001.md).
 
 ```text
 tokens (dados neutros -> CSS nx)
