@@ -65,7 +65,7 @@ Duas execuções gravaram inicialmente no mesmo checkout. A outra sessão regist
 | Fontes D19 | [Inventário dos scripts, menu e evidências](../audit/NX-DS-MKTAUTO-001/references.json) e [matriz funcional e visual](../audit/D19-mapeamento.md) |
 | Versão e API | Tokens e UI 0.2.0. [Contrato público](../../packages/react/CONTRACTS.md) e [migração do consumidor](../integration/MKTauto.md) |
 | Build e tipos | npm run typecheck, build, catalog:build e lint. Dois builds idênticos em pack:verify |
-| Testes de componentes e tokens | npm test: 26 testes aprovados. Cobertura da API antiga, valores resolvidos da 0.1.0, formas nativas, navegação e estados |
+| Testes de componentes e tokens | npm test: 28 testes aprovados. Cobertura da API antiga, valores resolvidos da 0.1.0, formas nativas, navegação, estados, cancelamento em diálogo aninhado e descrição rica em HTML |
 | Instalação | Pares React/DOM 19.2.8 e 19.3.1. Tarballs reais fora do workspace, sem symlink, uma cópia de React |
 | Responsividade | Chromium, 320, 390, 768, 1024 e 1440 px por modo MKTauto e por par de peers. Rolagem horizontal da página conferida |
 | Acessibilidade | Axe em desktop/mobile e em overlays. Teclado, Tab/Shift+Tab, Escape, retorno do foco, fundo inerte nativo, portal, forced colors e movimento reduzido. Zero violações nas verificações automatizadas executadas |

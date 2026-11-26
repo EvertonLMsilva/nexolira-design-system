@@ -86,11 +86,12 @@ function ModalSurface({
       aria-describedby={description ? titleId + '-description' : undefined}
       onKeyDown={keepTabInDialog}
       onCancel={(event) => {
+        if (event.target !== event.currentTarget) return
         event.preventDefault()
         onOpenChange(false)
       }}
       onClose={(event) => {
-        if (!event.currentTarget.open) onOpenChange(false)
+        if (event.target === event.currentTarget && !event.currentTarget.open) onOpenChange(false)
       }}
       onClick={(event) => {
         if (event.target !== event.currentTarget) return
@@ -110,7 +111,7 @@ function ModalSurface({
           {closeLabel}
         </Button>
       </div>
-      {description && <p id={titleId + '-description'}>{description}</p>}
+      {description && <div id={titleId + '-description'}>{description}</div>}
       {children}
     </dialog>
   )

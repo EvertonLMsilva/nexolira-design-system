@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-26T13:28:32.389Z",
+  "checkedAt": "2026-11-26T22:50:26.345Z",
   "node": "v24.22.3",
   "deterministicBuild": true,
   "status": "PASS",
@@ -23,7 +23,7 @@
     {
       "name": "@nexolira/ui",
       "version": "0.2.0",
-      "sha256": "050a8c88c71bb68e1d9c666d14db411dcc3f48eb64f904d265e9daf383073667",
+      "sha256": "d1b5140ce5bf477df36f30bc80bf020130b6eabbf901d899a57085d29e8127d2",
       "archive": ".artifacts/nexolira-ui-0.2.0.tgz",
       "files": [
         "README.md",
