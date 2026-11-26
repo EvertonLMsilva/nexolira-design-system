@@ -8,6 +8,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 import { spawnSync } from 'node:child_process'
 import assert from 'node:assert/strict'
 import { chromium, expect } from '@playwright/test'
+import { verifyCatalog } from './verify-catalog.mjs'
 import AxeBuilder from '@axe-core/playwright'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -48,11 +49,17 @@ const browser = await chromium.launch({ headless: true })
 const consumers = []
 try {
   for (const version of ['19.2.8', '19.3.1']) {
-    const consumer = fs.mkdtempSync(path.join(os.tmpdir(), 'nx-ds-002-consumer-'))
+    const consumer = fs.mkdtempSync(path.join(os.tmpdir(), 'nx-ds-consumer-'))
     assert(!path.resolve(consumer).startsWith(root + path.sep), 'Consumer must be outside the workspace')
     fs.writeFileSync(path.join(consumer, 'package.json'), JSON.stringify({ name: 'nx-ds-disposable-consumer', version: '0.0.0', private: true, type: 'module', allowScripts: { esbuild: true } }, null, 2))
     for (const file of ['index.html', 'src.tsx']) fs.copyFileSync(path.join(root, 'test/consumer', file), path.join(consumer, file))
-    fs.writeFileSync(path.join(consumer, 'tsconfig.json'), JSON.stringify({ compilerOptions: { target: 'ES2022', module: 'ESNext', moduleResolution: 'Bundler', jsx: 'react-jsx', strict: true, noEmit: true, resolveJsonModule: true, skipLibCheck: true, lib: ['ES2022', 'DOM'] }, include: ['src.tsx'] }))
+    const catalog = path.join(root, 'apps/docs')
+    fs.copyFileSync(path.join(catalog, 'Examples.tsx'), path.join(consumer, 'Examples.tsx'))
+    fs.copyFileSync(path.join(catalog, 'src.tsx'), path.join(consumer, 'catalog.tsx'))
+    fs.copyFileSync(path.join(catalog, 'catalog.css'), path.join(consumer, 'catalog.css'))
+    fs.writeFileSync(path.join(consumer, 'catalog.html'), fs.readFileSync(path.join(catalog, 'index.html'), 'utf8').replace('./src.tsx', './catalog.tsx'))
+    fs.writeFileSync(path.join(consumer, 'vite.config.js'), "export default { build: { rolldownOptions: { input: ['index.html', 'catalog.html'] } } }")
+    fs.writeFileSync(path.join(consumer, 'tsconfig.json'), JSON.stringify({ compilerOptions: { target: 'ES2022', module: 'ESNext', moduleResolution: 'Bundler', jsx: 'react-jsx', strict: true, noEmit: true, resolveJsonModule: true, skipLibCheck: true, types: ['vite/client'], lib: ['ES2022', 'DOM'] }, include: ['src.tsx', 'catalog.tsx'] }))
     run(['install', ...packages.map(p => p.archive), 'react@' + version, 'react-dom@' + version, 'typescript@6.0.2', 'vite@8.3.8', '@types/react@19.3.0', '@types/react-dom@19.3.0', '--no-audit', '--no-fund'], consumer)
     run(['node_modules/typescript/bin/tsc'], consumer, null)
     run(['node_modules/vite/bin/vite.js', 'build'], consumer, null)
@@ -155,6 +162,7 @@ try {
       assert.deepEqual(accessibility.violations.map(v => ({ id: v.id, impact: v.impact })), [], 'Automated accessibility violations')
       await page.setViewportSize({ width: 320, height: 900 })
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'Unexpected horizontal page overflow at 320px')
+      await verifyCatalog(page, origin, artifacts, version, checks)
       assert.deepEqual(externalRequests, [])
       assert.deepEqual(errors, [])
       checks.push('axe checks, 320px reflow, zero runtime warnings/errors/external requests')

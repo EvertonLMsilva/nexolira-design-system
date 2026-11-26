@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import fs from 'node:fs'
+import { createHash } from 'node:crypto'
 import { compileTokens, resolveToken, tokens } from '../packages/tokens/src/index.js'
 
 describe('token contract', () => {
@@ -8,9 +9,31 @@ describe('token contract', () => {
     expect(result.resolved['nexolira.dark']['color.background']).toBe('#0e1520')
     expect(result.resolved['nexolira.light']['color.background']).toBe('#f6f8fc')
     expect(result.resolved['nexolira.light']['card.background']).toBe('#ffffff')
-    expect(result.css.match(/--nx-card-background:/g)).toHaveLength(2)
+    expect(result.resolved['mktauto.light']['button.primary.background']).toBe('#244bf1')
+    expect(result.resolved['mktauto.dark']['card.background']).toBe('#182235')
+    const legacy = structuredClone(tokens)
+    delete legacy.themes['mktauto.light']
+    delete legacy.themes['mktauto.dark']
+    expect(Object.keys(compileTokens(legacy).resolved)).toEqual(['nexolira.dark', 'nexolira.light'])
+    expect(result.css.match(/--nx-card-background:/g)).toHaveLength(4)
     expect(result.css).not.toMatch(/:root|@import|(^|\n)(html|body)\b/)
     expect(compileTokens(tokens).css).toBe(result.css)
+  })
+  it('preserves every public token value from Nexolira 0.1.0', () => {
+    const { resolved } = compileTokens(tokens)
+    const baseline = JSON.parse(fs.readFileSync('test/nexolira-0.1-contract.json', 'utf8')) as { keys: string[]; hashes: Record<string, string> }
+    for (const [mode, expected] of Object.entries(baseline.hashes)) {
+      const values = baseline.keys.map(key => [key, resolved[mode][key]])
+      expect(createHash('sha256').update(JSON.stringify(values)).digest('hex')).toBe(expected)
+    }
+  })
+  it('requires complete mode pairs and rejects unsafe CSS selectors', () => {
+    const missing = structuredClone(tokens)
+    delete missing.themes['mktauto.dark']
+    expect(() => compileTokens(missing)).toThrow('complete dark and light pairs')
+    const invalid = structuredClone(tokens)
+    invalid.themes['x"]{}.dark'] = invalid.themes['nexolira.dark']
+    expect(() => compileTokens(invalid)).toThrow('Invalid theme name')
   })
   it('rejects undefined aliases and cycles rather than emitting invalid CSS', () => {
     expect(() => resolveToken('missing', {})).toThrow('Undefined token')

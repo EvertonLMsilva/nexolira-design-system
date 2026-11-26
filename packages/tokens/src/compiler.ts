@@ -18,8 +18,11 @@ export function resolveToken(key: string, values: Record<string, string>, visiti
 
 /** Validates the complete contract before emitting any CSS. No global selectors. */
 export function compileTokens(model: TokenModel): { css: string; resolved: Record<string, Record<string, string>> } {
-  const modes = ['nexolira.dark', 'nexolira.light']
-  if (Object.keys(model.themes).sort().join() !== [...modes].sort().join()) throw new Error('Expected Nexolira dark and light themes')
+  const names = Object.keys(model.themes)
+  if (!names.every(name => /^[a-z][a-z0-9-]*\.(dark|light)$/.test(name))) throw new Error('Invalid theme name')
+  const brands = [...new Set(names.map(name => name.split('.')[0]))].filter(brand => brand !== 'nexolira').sort()
+  const modes = ['nexolira', ...brands].flatMap(brand => [brand + '.dark', brand + '.light'])
+  if (!modes.every(mode => Object.hasOwn(model.themes, mode))) throw new Error('Expected complete dark and light pairs')
   const semanticKeys = Object.keys(model.themes[modes[0]]).sort()
   const keys = [...Object.keys(model.primitives), ...semanticKeys, ...Object.keys(model.components)]
   if (new Set(keys.map(cssName)).size !== keys.length) throw new Error('CSS name collision')
@@ -29,7 +32,7 @@ export function compileTokens(model: TokenModel): { css: string; resolved: Recor
   }
   const resolved: Record<string, Record<string, string>> = {}
   const blocks: string[] = []
-  for (const [index, mode] of modes.entries()) {
+  for (const mode of modes) {
     const theme = model.themes[mode]
     if (Object.keys(theme).sort().join() !== semanticKeys.join()) throw new Error('Incomplete theme: ' + mode)
     for (const [key, value] of Object.entries(theme)) {
@@ -41,8 +44,11 @@ export function compileTokens(model: TokenModel): { css: string; resolved: Recor
     const values = { ...model.primitives, ...theme, ...model.components }
     resolved[mode] = Object.fromEntries(keys.map(key => [key, resolveToken(key, values)]))
     const declarations = Object.entries(values).map(([key, value]) => '  ' + cssName(key) + ': ' + (alias(value) ? 'var(' + cssName(alias(value)!) + ')' : value) + ';')
-    const selector = index === 0 ? '.nx-scope,\n[data-nx-theme="nexolira"]' : '.nx-scope[data-nx-mode="light"],\n[data-nx-theme="nexolira"][data-nx-mode="light"]'
+    const [brand, scheme] = mode.split('.')
+    const host = '[data-nx-theme="' + brand + '"]'
+    const suffix = scheme === 'light' ? '[data-nx-mode="light"]' : ''
+    const selector = (brand === 'nexolira' ? '.nx-scope' + suffix + ',\n' : '') + host + suffix
     blocks.push(selector + ' {\n' + declarations.join('\n') + '\n}\n')
   }
-  return { css: '/* Nexolira tokens 0.1.0 — generated; scoped defaults, no global reset. */\n' + blocks.join('\n'), resolved }
+  return { css: '/* Nexolira tokens — generated; scoped defaults, no global reset. */\n' + blocks.join('\n'), resolved }
 }

@@ -1,7 +1,7 @@
 # Nexolira Design System
 
-Biblioteca local 0.1.0 de tokens e UI React, independente das aplicações.
-[Task NX-DS-002 e evidências](docs/tasks/NX-DS-002.md).
+Biblioteca local 0.2.0 de tokens e UI React, independente das aplicações.
+[Entrega D19](docs/tasks/NX-DS-MKTAUTO-001.md) · [Catálogo visual](apps/docs/README.md) · [Guia de instalação para o MKTauto](docs/integration/MKTauto.md).
 O [NX-DS-001](docs/tasks/NX-DS-001-REPORT.md) é o registro histórico da fundação;
 seu PR #1 foi integrado à main em 18/11/2026.
 
@@ -11,7 +11,7 @@ Escolha um par React/React DOM suportado e mantenha as versões iguais.
 Não é necessário registry Nexolira; os pacotes continuam privados e não publicados.
 
 ```text
-npm install ./nexolira-tokens-0.1.0.tgz ./nexolira-ui-0.1.0.tgz react@19.3.1 react-dom@19.3.1
+npm install ./nexolira-tokens-0.2.0.tgz ./nexolira-ui-0.2.0.tgz react@19.3.1 react-dom@19.3.1
 ```
 
 CSS deve ser importado explicitamente, nessa ordem:
@@ -53,7 +53,7 @@ Não há ThemeProvider obrigatório, alteração de html/body/:root ou fontes re
 | @nexolira/tokens | tokens, resolvedTokens, compileTokens, resolveToken, cssName, TokenModel |
 | @nexolira/tokens/tokens.json | Modelo neutro de referência |
 | @nexolira/tokens/styles.css | Variáveis CSS por contêiner, com declaração TS para import de efeito |
-| @nexolira/ui | Button, Card, Panel, Badge, StatusMessage, Input, FormField e tipos |
+| @nexolira/ui | Controles, campos, navegação, overlays, apresentação de dados e mídia. [Contrato React](packages/react/CONTRACTS.md) |
 | @nexolira/ui/styles.css | Aparência opt-in nx-*, com declaração TS para import de efeito |
 
 ESM e declarations .d.ts. Subpaths internos não são públicos. Nenhum JS importa
@@ -82,6 +82,7 @@ npm run lint
 npm test
 npm run build
 npm run validate
+npm run catalog:build
 npm run pack:verify
 ```
 
@@ -103,9 +104,7 @@ das referências antigas, sem ser dependência de build.
 
 Peers limitados aos pares 19.2.8 e 19.3.1. Não misturar versões React/DOM.
 TypeScript 6.0.2, @types/react/DOM19.3.0 e Vite8.3.8 compõem o consumidor de teste.
-Sem suporte declarado a React18, CommonJS, SSR/hidratação, portais ou componentes
-complexos. MKTauto/Market Direction permanecem temas candidatos, sem paletas copiadas.
-Pré-release0.1; mudanças incompatíveis exigem migração explícita, sem update automático.
+Os temas Nexolira e MKTauto incluem os modos claro e escuro. Dialog aceita um portal dentro de um host com tema. Os testes usam ESM e renderização cliente em Chromium. A versão 0.2.0 acrescenta APIs e preserva os valores públicos dos temas Nexolira da 0.1.0.
 UNLICENSED: distribuição local autorizada, nenhuma licença aberta presumida.
 
 ## Contrato para a Frente Frontend

@@ -1,9 +1,6 @@
 # Versionamento e distribuição local
 
-Nomes propostos: @nexolira/tokens e @nexolira/ui. O workspace docs é interno.
-Manifests atuais 0.0.0/private/UNLICENSED são scaffolds, não releases publicadas.
-Escolher licença do próprio projeto e validar direitos de qualquer fonte
-reaproveitada antes da distribuição; acesso local ao código não é licença.
+Os pacotes locais @nexolira/tokens e @nexolira/ui estão na versão 0.2.0, private e UNLICENSED. O catálogo é um workspace interno. Consulte o [guia do consumidor](../integration/MKTauto.md) e o [registro de hashes e aceite](../tasks/NX-DS-MKTAUTO-001.md).
 
 ## SemVer
 
@@ -16,7 +13,7 @@ Política baseada em [SemVer 2.0.0](https://semver.org/):
 | MAJOR | Remoção/rename, nova prop obrigatória, semântica alterada, tema/escopo/unidade incompatíveis | Guia de migração, consumidores afetados e aceite específico |
 
 Durante pré-release, registrar quebra explicitamente; não usar 0.x para esconder
-mudanças. Primeiro lançamento poderá ser 0.1.0 com contrato declarado.
+mudanças. O primeiro lançamento foi a 0.1.0.
 Coordenar versões de tokens/UI no início, com changelog conjunto. Definir peer
 range e dependências compatíveis por evidência; não acoplar atualização automática.
 Remoção de alias obsoleto só após janela de migração documentada.

@@ -1,8 +1,24 @@
-# Style Guide Nexolira — fundação 0.1
+# Style Guide Nexolira 0.2
 
 Direção normativa para evoluir o Design System; não é certificação da UI existente.
 Referências e limitações estão na [auditoria](audit/AUDIT.md); valores executáveis
 do conjunto inicial em [tokens](../packages/tokens/reference/tokens.json).
+
+## Identidade MKTauto
+
+| Papel | Claro | Escuro |
+|---|---|---|
+| Canvas | #f2f4f8 | #101725 |
+| Superfície / elevada | #ffffff / #f7f8fb | #182235 / #202c42 |
+| Texto / auxiliar | #172238 / #52617a | #edf2fd / #a8b5cf |
+| Ação / foco | #244bf1 / #244bf1 | #89a2ff / #aebfff |
+| Borda funcional / decorativa | #64748b / #dfe5ee | #8091ae / #314058 |
+| Sucesso / atenção / erro | #116647 / #795111 / #9a3d37 | #9ce1b9 / #f6d78c / #ffb6b2 |
+| Fundo da sidebar | #ffffff | #0b1322 |
+
+Use os papéis semânticos `color.sidebar.*` e `color.selected.*` em navegação e seleção. O link atual inclui `aria-current` e um indicador de borda. Ações principais têm texto legível em repouso, hover e pressão. O raio médio do MKTauto é 0,875rem. O ponto de mudança de navegação do catálogo é 900px. Em telas estreitas, controles e rodapés de ações quebram linha, e tabelas rolam na região identificada.
+
+[Comparar os temas e interagir com os controles](../apps/docs/README.md) · [Contraste medido](audit/contrast.json)
 
 ## Identidade e hierarquia
 

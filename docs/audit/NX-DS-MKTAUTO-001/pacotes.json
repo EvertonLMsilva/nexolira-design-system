@@ -1,0 +1,98 @@
+{
+  "checkedAt": "2026-11-26T13:28:32.389Z",
+  "node": "v24.22.3",
+  "deterministicBuild": true,
+  "status": "PASS",
+  "packages": [
+    {
+      "name": "@nexolira/tokens",
+      "version": "0.2.0",
+      "sha256": "95ea2fe7ae4235f172c27cc90cda9a1b9e512cbad5663a95ab46fcdf974ba874",
+      "archive": ".artifacts/nexolira-tokens-0.2.0.tgz",
+      "files": [
+        "README.md",
+        "dist/compiler.d.ts",
+        "dist/index.d.ts",
+        "dist/index.js",
+        "dist/styles.css",
+        "dist/styles.d.ts",
+        "dist/tokens.json",
+        "package.json"
+      ]
+    },
+    {
+      "name": "@nexolira/ui",
+      "version": "0.2.0",
+      "sha256": "050a8c88c71bb68e1d9c666d14db411dcc3f48eb64f904d265e9daf383073667",
+      "archive": ".artifacts/nexolira-ui-0.2.0.tgz",
+      "files": [
+        "README.md",
+        "dist/Badge.d.ts",
+        "dist/Button.d.ts",
+        "dist/Card.d.ts",
+        "dist/Collection.d.ts",
+        "dist/Controls.d.ts",
+        "dist/DataMedia.d.ts",
+        "dist/Dialog.d.ts",
+        "dist/Fields.d.ts",
+        "dist/FormField.d.ts",
+        "dist/index.d.ts",
+        "dist/index.js",
+        "dist/Input.d.ts",
+        "dist/Navigation.d.ts",
+        "dist/Overlay.d.ts",
+        "dist/StatusMessage.d.ts",
+        "dist/styles.css",
+        "dist/styles.d.ts",
+        "dist/types.d.ts",
+        "package.json"
+      ]
+    }
+  ],
+  "consumers": [
+    {
+      "react": "19.2.8",
+      "reactDom": "19.2.8",
+      "install": "PASS_TARBALLS_NO_SYMLINK",
+      "typecheck": "PASS",
+      "build": "PASS",
+      "singleReact": true,
+      "browser": "PASS",
+      "accessibilityViolations": 0,
+      "checks": [
+        "dark: normal/hover/active styles, input, event, label, error, ref",
+        "light: normal/hover/active styles, input, event, label, error, ref",
+        "nested aliases, independent React roots, no global style leakage",
+        "unscoped html/body/outside text unchanged",
+        "keyboard activation, focus ring, skipped disabled/loading controls",
+        "reduced motion and forced-colors focus",
+        "MKTauto light: 320/390/768/1024/1440; axe desktop/mobile, dialog/drawer, focus and Escape/backdrop",
+        "MKTauto dark: 320/390/768/1024/1440; axe desktop/mobile, dialog/drawer, focus and Escape/backdrop",
+        "Catalog interactions, native selection and nested cross-brand aliases",
+        "axe checks, 320px reflow, zero runtime warnings/errors/external requests"
+      ]
+    },
+    {
+      "react": "19.3.1",
+      "reactDom": "19.3.1",
+      "install": "PASS_TARBALLS_NO_SYMLINK",
+      "typecheck": "PASS",
+      "build": "PASS",
+      "singleReact": true,
+      "browser": "PASS",
+      "accessibilityViolations": 0,
+      "checks": [
+        "dark: normal/hover/active styles, input, event, label, error, ref",
+        "light: normal/hover/active styles, input, event, label, error, ref",
+        "nested aliases, independent React roots, no global style leakage",
+        "unscoped html/body/outside text unchanged",
+        "keyboard activation, focus ring, skipped disabled/loading controls",
+        "reduced motion and forced-colors focus",
+        "MKTauto light: 320/390/768/1024/1440; axe desktop/mobile, dialog/drawer, focus and Escape/backdrop",
+        "MKTauto dark: 320/390/768/1024/1440; axe desktop/mobile, dialog/drawer, focus and Escape/backdrop",
+        "Catalog interactions, native selection and nested cross-brand aliases",
+        "axe checks, 320px reflow, zero runtime warnings/errors/external requests"
+      ]
+    }
+  ]
+}

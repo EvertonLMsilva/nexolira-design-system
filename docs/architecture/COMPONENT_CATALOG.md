@@ -1,4 +1,8 @@
-# Catálogo priorizado — contratos, sem implementação React
+# Catálogo de componentes
+
+O [catálogo visual 0.2.0](../../apps/docs/README.md) e o [contrato de UI](../../packages/react/CONTRACTS.md) descrevem os componentes disponíveis. A [matriz D19](../audit/D19-mapeamento.md) registra a origem e o aceite de cada grupo.
+
+## Priorização histórica da fundação
 
 MVP_REQUIRED significa candidato necessário à primeira fatia de consumo concreto,
 não autorização para implementar tudo no NX-DS-001. A ordem dentro do MVP começa
@@ -59,5 +63,4 @@ para Dialog/Menu/Tabs, validar padrão completo antes de divulgar API.
 
 As propostas de props estão em [contratos React](../../packages/react/CONTRACTS.md)
 e na tabela de [temas](THEMES.md). Specs futuras usam
-[COMPONENT_SPEC](../templates/COMPONENT_SPEC.md). Nenhum componente deste
-catálogo é declarado implementado, empacotado ou adotado.
+[COMPONENT_SPEC](../templates/COMPONENT_SPEC.md). O quadro acima registra o planejamento inicial. Consulte o catálogo visual para a versão atual.
