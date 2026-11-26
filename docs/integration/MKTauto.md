@@ -4,7 +4,7 @@ O frontend pode adotar esta versão em uma entrega própria. A distribuição us
 
 ## Instalação reproduzível
 
-1. Após a publicação da tag oficial `v0.2.0`, use um checkout local dessa tag e execute `npm ci` e `npm run pack:verify`. O empacotamento executa o build. O relatório `.artifacts/pack-smoke.json` identifica os dois arquivos, SHA-256 e versões testadas.
+1. Após a publicação da tag oficial `v0.2.0`, use um checkout local dessa tag e use Node 24.22.1+ da série 24 e npm 12.2.2. Execute `npm ci`, `npx playwright install chromium` e `npm run pack:verify`. Em runner Linux sem as dependências do navegador, prepare a imagem com `npx playwright install --with-deps chromium`. O empacotamento executa o build. O relatório `.artifacts/pack-smoke.json` identifica os dois arquivos, SHA-256 e versões testadas.
 2. Confira os hashes com `Get-FileHash -Algorithm SHA256` ou `sha256sum`. Disponibilize ambos no mesmo diretório de dependências versionadas do consumidor, inclusive no contexto de build de CI e Docker. Use um caminho relativo como `vendor/`. Em repositório público, forneça os arquivos aprovados ao job por armazenamento interno autorizado ou gere ambos no checkout da tag antes de `npm ci` do consumidor. Verifique os hashes antes da instalação ou do build de imagem.
 3. No repositório consumidor, execute o comando abaixo e mantenha o lockfile junto dos dois arquivos.
 
